@@ -30,12 +30,10 @@ public class UsuarioController {
     public Usuario registrarUsuario(@RequestBody Usuario usuario) {
         return usuarioService.registrarUsuario(usuario);
     }
-
     @PutMapping("/{id}")
     public Usuario actualizarUsuario(@PathVariable int id, @RequestBody Usuario usuarioActualizado) {
         return usuarioService.actualizarUsuario(id, usuarioActualizado);
     }
-
     @DeleteMapping("/{id}")
     public void eliminarUsuario(@PathVariable int id) {
         usuarioService.eliminarUsuario(id);

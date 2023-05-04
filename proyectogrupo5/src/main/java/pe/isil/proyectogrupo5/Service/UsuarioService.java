@@ -57,7 +57,7 @@ public class UsuarioService {
             usuario.setFechaRegistro(fechaHoraActual);
             email.setTo(usuario.getEmail());
             email.setFrom("IntercambioDeObjetos4512@outlook.com");
-            email.setText("Mensaje de prueba 1");
+            email.setText("Mensaje de prueba Alexis 22");
             email.setSubject("Prueba1");
             mail.send(email);
             return usuarioRepository.save(usuario);
