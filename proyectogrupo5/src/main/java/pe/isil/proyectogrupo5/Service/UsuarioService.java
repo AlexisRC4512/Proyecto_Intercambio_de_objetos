@@ -11,6 +11,7 @@ import pe.isil.proyectogrupo5.Model.Usuario;
 import pe.isil.proyectogrupo5.Repository.GeneroRepository;
 import pe.isil.proyectogrupo5.Repository.UbigeoRepository;
 import pe.isil.proyectogrupo5.Repository.UsuarioRepository;
+import pe.isil.proyectogrupo5.Response.InicioSesionResponse;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -95,17 +96,19 @@ public class UsuarioService {
     public List<Ubigeo> obtenerUbigeos() {
         return ubigeoRepository.findAll();
     }
-    public Boolean iniciarSesion(String email ,String password){
+    public InicioSesionResponse iniciarSesion(String email, String password) {
         Usuario usuario = usuarioRepository.findByEmail(email);
 
-        if(usuario == null) {
-            return false;
-        }
-        boolean passwordMatch = passwordEncoder.matches(password, usuario.getContrasena());
-        if(passwordMatch) {
-            return true;
+        if (usuario == null) {
+            return new InicioSesionResponse(false, "El usuario no existe");
         }
 
-        return false;
+        boolean passwordMatch = passwordEncoder.matches(password, usuario.getContrasena());
+        if (passwordMatch) {
+            return new InicioSesionResponse(true, "Inicio de Sesion correcto");
+        }
+
+        return new InicioSesionResponse(false, "La contraseña es incorrecta");
     }
+
 }
