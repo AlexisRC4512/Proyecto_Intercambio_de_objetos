@@ -27,8 +27,8 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public Usuario registrarUsuario(@RequestBody Usuario usuario) {
-        return usuarioService.registrarUsuario(usuario);
+    public Usuario registrarUsuario(@RequestParam int Numero ) {
+        return usuarioService.registrarUsuario(Numero);
     }
     @PutMapping("/{id}")
     public Usuario actualizarUsuario(@PathVariable int id, @RequestBody Usuario usuarioActualizado) {

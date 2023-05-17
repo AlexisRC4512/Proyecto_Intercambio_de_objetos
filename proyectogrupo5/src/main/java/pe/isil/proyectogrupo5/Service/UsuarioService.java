@@ -8,9 +8,11 @@ import org.springframework.stereotype.Service;
 import pe.isil.proyectogrupo5.Model.Genero;
 import pe.isil.proyectogrupo5.Model.Ubigeo;
 import pe.isil.proyectogrupo5.Model.Usuario;
+import pe.isil.proyectogrupo5.Model.Usuarios_temporales;
 import pe.isil.proyectogrupo5.Repository.GeneroRepository;
 import pe.isil.proyectogrupo5.Repository.UbigeoRepository;
 import pe.isil.proyectogrupo5.Repository.UsuarioRepository;
+import pe.isil.proyectogrupo5.Repository.UsuariotemporalRepository;
 import pe.isil.proyectogrupo5.Response.InicioSesionResponse;
 
 import java.time.LocalDateTime;
@@ -19,7 +21,8 @@ import java.util.Optional;
 
 @Service
 public class UsuarioService {
-
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     @Autowired
     private UsuarioRepository usuarioRepository;
     @Autowired
@@ -29,10 +32,8 @@ public class UsuarioService {
 
     @Autowired
     private UbigeoRepository ubigeoRepository;
-
     @Autowired
-    private PasswordEncoder passwordEncoder;
-
+    private  Usuario_temporalService usuarioTemporalService;
     public List<Usuario> obtenerUsuarios() {
         return usuarioRepository.findAll();
     }
@@ -41,31 +42,25 @@ public class UsuarioService {
         return usuarioRepository.findById(id).orElse(null);
     }
 
-    public Usuario registrarUsuario(Usuario usuario) {
-        try {
-            if(usuario == null || usuario.getEmail() == null || usuario.getEmail().isEmpty() || usuario.getContrasena() == null || usuario.getContrasena().isEmpty()) {
-                return null;
-            }
+    public Usuario registrarUsuario(int numeroVerificacion) {
 
-            Optional<Usuario> usuarioExistente = Optional.ofNullable(usuarioRepository.findByEmail(usuario.getEmail()));
-            if (usuarioExistente.isPresent()) {
-                return null;
-            }
-            SimpleMailMessage email = new SimpleMailMessage();
-            String contrasenaEncriptada = passwordEncoder.encode(usuario.getContrasena());
-            usuario.setContrasena(contrasenaEncriptada);
-            LocalDateTime fechaHoraActual = LocalDateTime.now();
-            usuario.setFechaRegistro(fechaHoraActual);
-            email.setTo(usuario.getEmail());
-            email.setFrom("IntercambioDeObjetos4512@outlook.com");
-            email.setText("Mensaje de prueba Alexis 22");
-            email.setSubject("Prueba1");
-            mail.send(email);
-            return usuarioRepository.save(usuario);
-        } catch (Exception e) {
-            System.err.println("Error al registrar usuario: " + e.getMessage());
-            return null;
+      Usuarios_temporales usuarios_temporales= usuarioTemporalService.obtenerUsuarioTemporalPorCod(numeroVerificacion);
+      Usuario usuario=new Usuario<>();
+        if (usuarios_temporales!=null){
+            usuario.setContrasena(usuarios_temporales.getContrasena());
+            usuario.setApellidos(usuarios_temporales.getApellidos());
+            usuario.setEmail(usuarios_temporales.getEmail());
+            usuario.setGenero(usuarios_temporales.getGenero());
+            usuario.setNombres(usuarios_temporales.getNombres());
+            usuario.setUbigeo(usuarios_temporales.getUbigeo());
+            usuario.setFechaRegistro(usuarios_temporales.getFechaRegistro());
+            usuario.setEstado(1);
+            usuario.setDireccion1(usuarios_temporales.getDireccion1());
+            usuario.setDireccion2(usuarios_temporales.getDireccion2());
+            usuario.setFechaNacimiento(usuarios_temporales.getFechaNacimiento());
+            usuario.setTelefono(usuarios_temporales.getTelefono());
         }
+        return usuarioRepository.save(usuario);
     }
 
     public Usuario actualizarUsuario(int id, Usuario usuarioActualizado) {
@@ -75,7 +70,7 @@ public class UsuarioService {
         }
         usuarioExistente.setNombres(usuarioActualizado.getNombres());
         usuarioExistente.setApellidos(usuarioActualizado.getApellidos());
-        usuarioExistente.setContrasena(passwordEncoder.encode(usuarioActualizado.getContrasena()));
+        usuarioExistente.setContrasena(usuarioActualizado.getContrasena());
         usuarioExistente.setEmail(usuarioActualizado.getEmail());
         usuarioExistente.setFechaNacimiento(usuarioActualizado.getFechaNacimiento());
         usuarioExistente.setGenero(usuarioActualizado.getGenero());
@@ -110,5 +105,28 @@ public class UsuarioService {
 
         return new InicioSesionResponse(false, "La contraseña es incorrecta");
     }
+    public Usuario RecuperarContraseña(String email2) {
 
+        Usuario usuario = usuarioRepository.findByEmail(email2);
+
+        if (usuario!=null){
+            SimpleMailMessage email = new SimpleMailMessage();
+            String contrasenaEncriptada = passwordEncoder.encode(usuario.getContrasena());
+            email.setTo(usuario.getEmail());
+            email.setFrom("IntercambioDeObjetos4512@outlook.com");
+            email.setText("Tu contraseña es :::"+usuario.getContrasena());
+            email.setSubject("Recuperacion de contraseña");
+            mail.send(email);
+        }
+        return usuario;
+    }
+
+    public Usuario CambiarDeContraseña(String email2,String Nuevacontraseña){
+        Usuario usuario = usuarioRepository.findByEmail(email2);
+
+        if (usuario!=null){
+           usuario.setContrasena(Nuevacontraseña);
+        }
+        return usuarioRepository.save(usuario);
+    }
 }

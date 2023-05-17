@@ -12,12 +12,11 @@ import java.time.LocalDateTime;
 @Builder
 @ToString
 @Entity
-@Table(name = "usuarios")
-public class Usuario<U> {
-
+@Table(name = "usuarios_temporales")
+public class Usuarios_temporales {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_usuario")
+    @Column(name = "id_usuario_temporal")
     private int id;
 
     @Column(name = "nombres")
@@ -54,6 +53,6 @@ public class Usuario<U> {
 
     @Column(name = "contrasena")
     private String contrasena;
-    @Column(name = "estado")
-    private int estado;
+    @Column(name = "cod_unico")
+    private int codUnico;
 }
