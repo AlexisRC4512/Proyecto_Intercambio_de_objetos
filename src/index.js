@@ -1,20 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import LoginPage from './components/login';
-import RegiterPage from './components/register';
+import RegiterPage from './components/mainPage';
+import SignupPage from './components/signUp';
+import VerificationPage from './components/verificationPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LoginPage />,
+    // element: <SignupPage />,
+    // element: <VerificationPage />,
+
+
   },
   {
-    path: "/register",
+    path: "/mainPage",
     element: <RegiterPage />,
+  },
+  {
+    path: "/signup",
+    element: <SignupPage />,
+  },
+  {
+    path: "/verification",
+    element: <VerificationPage />,
   },
 ]);
 

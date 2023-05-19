@@ -1,0 +1,30 @@
+.featureproducts{
+    padding-top: 150px;
+}
+
+.rounded-circle{
+    margin-bottom: 20px !important;
+}
+
+.brandname{
+    font-size: 30px !important;
+    font-weight: bolder;
+}
+
+.navbar{
+    height: 80px !important;
+    box-shadow: 0px 5px 20px rgba(138, 138, 138, 0.993);
+    background-color: #c2d4d4 !important;
+}
+
+
+.mainpagebg {
+    --s: 150px; /* control the size */
+    
+    --_g: #0000 90deg,#bfcccf 0;
+    background:
+      conic-gradient(from 116.56deg at calc(100%/3) 0   ,var(--_g)),
+      conic-gradient(from -63.44deg at calc(200%/3) 100%,var(--_g))
+      #bbcace;
+    background-size: var(--s) var(--s);
+  }
