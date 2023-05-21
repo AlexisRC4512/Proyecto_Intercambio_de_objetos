@@ -64,7 +64,7 @@ public class Usuario_temporalService {
             usuarios_temporales.setFechaRegistro(fechaHoraActual);
             int numRandom2=generateRandomNumber();
             email.setTo(usuarios_temporales.getEmail());
-            email.setFrom("IntercambioDeObjetos4512@outlook.com");
+            email.setFrom("truequeapp4512@gmail.com");
             usuarios_temporales.setCodUnico(numRandom2);
             email.setText("Para verificar tu cuenta y pueda acceder tiene que usar este codigo:::"+numRandom2);
             email.setSubject("Prueba1");

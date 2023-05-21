@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pe.isil.proyectogrupo5.Model.Categoria;
 import pe.isil.proyectogrupo5.Model.Subcategoria;
+import pe.isil.proyectogrupo5.Service.CategoriaService;
 import pe.isil.proyectogrupo5.Service.SubcategoriaService;
 
 import java.util.List;
@@ -14,10 +16,12 @@ import java.util.Optional;
 @RequestMapping("/api/subcategorias")
 public class SubcategoriaController {
     private final SubcategoriaService subcategoriaService;
+    private final CategoriaService categoriaService;
 
     @Autowired
-    public SubcategoriaController(SubcategoriaService subcategoriaService) {
+    public SubcategoriaController(SubcategoriaService subcategoriaService, CategoriaService categoriaService) {
         this.subcategoriaService = subcategoriaService;
+        this.categoriaService = categoriaService;
     }
 
     @GetMapping
@@ -55,5 +59,15 @@ public class SubcategoriaController {
     public ResponseEntity<Void> deleteSubcategoria(@PathVariable int id) {
         subcategoriaService.deleteSubcategoria(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    @GetMapping("/getCategoriaId")
+    public ResponseEntity<List<Subcategoria>> getSubcategoriasByCategoriaId(@RequestParam("categoriaId") int categoriaId) {
+        Optional<Categoria> categoria = categoriaService.getCategoriaById(categoriaId);
+        if (categoria.isPresent()) {
+            List<Subcategoria> subcategorias = subcategoriaService.getSubcategoriasByCategoriaId(categoriaId);
+            return new ResponseEntity<>(subcategorias, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }

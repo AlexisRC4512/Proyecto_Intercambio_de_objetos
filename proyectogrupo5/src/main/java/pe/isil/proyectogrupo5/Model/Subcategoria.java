@@ -17,9 +17,9 @@ public class Subcategoria {
     @Id
     @Column(name = "id_subcategoria")
     private int idSubcategoria;
-
-    @Column(name = "id_categoria")
-    private int id_categoria;
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
+    private Categoria categoria;
 
     @Column(name = "nombre")
     private String nombre;

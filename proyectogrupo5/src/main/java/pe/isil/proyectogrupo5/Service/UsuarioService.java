@@ -113,7 +113,7 @@ public class UsuarioService {
             SimpleMailMessage email = new SimpleMailMessage();
             String contrasenaEncriptada = passwordEncoder.encode(usuario.getContrasena());
             email.setTo(usuario.getEmail());
-            email.setFrom("IntercambioDeObjetos4512@outlook.com");
+            email.setFrom("truequeapp4512@gmail.com");
             email.setText("Tu contraseña es :::"+usuario.getContrasena());
             email.setSubject("Recuperacion de contraseña");
             mail.send(email);
