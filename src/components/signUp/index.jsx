@@ -217,7 +217,7 @@ function SignupPage() {
           type="password"
           value={signupUser.password}
           onChange={(data) => formSignup("password", data.target.value)}
-          placeholder="Pon contra"
+          placeholder="Ingrese su contraseña"
         />
 
         <label>Confirmar Contraseña</label>

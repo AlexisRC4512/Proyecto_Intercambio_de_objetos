@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 import "./style.css";
 import LogoHeader from "../../shared/logoHeader";
 
@@ -37,7 +38,12 @@ function LoginPage() {
         console.log("krja");
       }
     } catch (error) {
-      console.log("krja", error);
+      Swal.fire({
+        title: "Credenciales incorrectas!",
+        text: "Intente nuevamente",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
     }
   };
 

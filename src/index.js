@@ -8,11 +8,13 @@ import LoginPage from './components/login';
 import RegiterPage from './components/mainPage';
 import SignupPage from './components/signUp';
 import VerificationPage from './components/verificationPage';
+import MainPage from './components/mainPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LoginPage />,
+    // element: <LoginPage />,
+    element: <MainPage />
     // element: <SignupPage />,
     // element: <VerificationPage />,
 

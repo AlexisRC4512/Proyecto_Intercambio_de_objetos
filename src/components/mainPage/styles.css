@@ -1,0 +1,2419 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+.v117_338 {
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(255,255,255,1);
+  background: linear-gradient(rgba(119,86,132,1), rgba(61,61,61,1));
+
+  opacity: 1;
+  /* position: relative; */
+  /* top: 0px;
+  left: 0px; */
+  /* overflow: hidden; */
+}
+.v117_339 {
+  /* width: 100%;
+  height: 100%; */
+  /* background: linear-gradient(rgba(119,86,132,1), rgba(61,61,61,1)); */
+  /* opacity: 1; */
+  /* position: relative; */
+  /* top: 0px;
+  left: 0px; */
+  /* overflow: hidden; */
+}
+.v117_340 {
+  /* width: 100px;
+  height: 100px; */
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_340.png"); */
+  /* background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; */
+  opacity: 1;
+  /* position: absolute; */
+  top: 4274px;
+  left: 175px;
+  overflow: hidden;
+}
+.v117_341 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* width: 100%; */
+  /* height: 517px; */
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_341.png"); */
+  /* background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; */
+  /* opacity: 1; */
+  border: 2px solid red;
+  /* position: absolute; */
+  /* top: 244px;
+  left: 117px; */
+  /* overflow: hidden; */
+}
+.v117_342 {
+  width: 591px;
+  height: 517px;
+  background: rgba(196,196,196,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 606px;
+  overflow: hidden;
+}
+.v117_343 {
+  /* width: 490px;
+  height: 457px; */
+  border: 1px solid blue;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_343.png"); */
+  /* background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; */
+  opacity: 1;
+  color: white;
+  /* font-size: 30px; */
+  /* position: absolute;
+  top: 22px;
+  left: 0px; */
+  /* overflow: hidden; */
+}
+.v117_344 {
+  /* width: 473px;
+  height: 75px; */
+  border: 1px solid yellow;
+  display: flex;
+  justify-content: space-around;
+  font-size: 25px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_344.png"); */
+  /* background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; */
+  opacity: 1;
+  /* position: absolute; */
+  /* top: 382px;
+  left: 2px; */
+  overflow: hidden;
+}
+.v117_345 {
+  display: block;
+  border: 1px solid black;
+  /* width: 135px;
+  height: 75px; */
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_345.png"); */
+  /* background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden; */
+}
+.v117_346 {
+  width: 65px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 0px;
+  left: 8px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 30px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_347 {
+  /* width: 135px; */
+  color: rgba(255,255,255,0.5);
+  /* position: absolute; */
+  /* top: 45px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1; */
+  text-align: left;
+}
+.v117_348 {
+  width: 93px;
+  height: 75px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_348.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 199px;
+  overflow: hidden;
+}
+.v117_349 {
+  width: 55px;
+  color: rgba(255,255,255,1);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 30px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_350 {
+  width: 88px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 45px;
+  left: 5px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_351 {
+  width: 88px;
+  height: 75px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_351.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 385px;
+  overflow: hidden;
+}
+.v117_352 {
+  width: 75px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 0px;
+  left: 13px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 30px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_353 {
+  width: 75px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 45px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_354 {
+  /* width: 490px;
+  height: 342px; */
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_354.png"); */
+  /* background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; */
+  opacity: 1;
+  /* position: relative; */
+  /* top: 0px;
+  left: 0px; */
+  font-size: 40px;
+  /* overflow: hidden; */
+}
+.v117_356 {
+  width: 490px;
+  color: rgba(255,255,255,1);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 50px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_357 {
+  width: 123px;
+  height: 50px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_357.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 292px;
+  left: 0px;
+  overflow: hidden;
+}
+.v117_358 {
+  width: 123px;
+  text-align: center;
+  /* height: 50px; */
+  background: linear-gradient(rgba(80,117,173,1), rgba(112,140,174,1));
+  padding: 10px 20px;
+  margin: 10px;
+  opacity: 1;
+  font-size: 15px;
+  position: relative;
+  /* top: 0px;
+  left: 0px; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_359 {
+  width: 83px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_362 {
+  width: 591px;
+  height: 517px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_362.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 606px;
+  overflow: hidden;
+}
+.v117_363 {
+  width: 187px;
+  height: 140px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_363.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_364 {
+  width: 187px;
+  height: 127px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_364.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 390px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_365 {
+  width: 179px;
+  height: 159px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_365.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 358px;
+  left: 202px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_366 {
+  width: 187px;
+  height: 220px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_366.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 155px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_367 {
+  width: 187px;
+  height: 108px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_367.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 202px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_368 {
+  width: 187px;
+  height: 220px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_368.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 123px;
+  left: 202px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_369 {
+  width: 187px;
+  height: 412px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_369.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 59px;
+  left: 404px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_370 {
+  margin: 15px;
+  border: 1px solid yellow;
+  text-align: center;
+
+
+  /* width: 100%;
+  height: 144px; */
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_370.png"); */
+  /* background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1; */
+  /* position: relative; */
+  /* top: 0px;
+  left: 0px;
+  overflow: hidden; */
+}
+.v117_371 {
+  width: 506px;
+  height: 70px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_371.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 10px 10px;
+  margin: 40px;
+  opacity: 1;
+  position: absolute;
+  top: 74px;
+  left: 773px;
+  overflow: hidden;
+}
+.v117_372 {
+  width: 113px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_373 {
+  width: 90px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 20px;
+  left: 163px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_374 {
+  width: 40px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 20px;
+  left: 293px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_375 {
+  width: 123px;
+  height: 50px;
+  background: linear-gradient(rgba(80,117,173,1), rgba(112,140,174,1));
+  padding: 10px 20px;
+  margin: 10px;
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  left: 373px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_376 {
+  width: 83px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_377 {
+  width: 162px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 90px;
+  left: 117px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 25px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_378 {
+  width: 384px;
+  height: 50px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_378.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 84px;
+  left: 319px;
+  overflow: hidden;
+}
+.v117_379 {
+  width: 384px;
+  height: 50px;
+  background: rgba(255,255,255,0.10000000149011612);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_380 {
+  width: 251px;
+  height: 30px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_380.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 10px;
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  overflow: hidden;
+}
+.name {
+  color: #fff;
+}
+.v117_382 {
+  width: 221px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_563 {
+  width: 100%;
+  height: 49px;
+  background: rgba(255,255,255,0.10000000149011612);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v117_565 {
+  width: 20px;
+  height: 20px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_565.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 10px;
+  opacity: 1;
+  position: absolute;
+  top: 14px;
+  left: 647px;
+  overflow: hidden;
+}
+.name {
+  color: #fff;
+}
+.v117_567 {
+  width: 709px;
+  /* color: url("../../assets/Plantillas/mainPage/images/v117_567.png"); */
+  position: absolute;
+  top: 14px;
+  left: 365px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_383 {
+  width: 100%;
+  height: 2045px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_383.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 896px;
+  left: 125px;
+  overflow: hidden;
+}
+.v117_384 {
+  border: 1px solid red;
+  display: flex;
+  margin-top: 25px;
+  justify-content: space-around;
+  height: 55px;
+  align-items: center;
+  /* width: 100%;
+  height: 40px; */
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_384.png"); */
+  /* background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 160px;
+  left: 0px;
+  overflow: hidden; */
+}
+.v117_385 {
+  width: 288px;
+  height: 40px;
+  background: rgba(255,255,255,0.10000000149011612);
+  padding: 5px 70px;
+  margin: 10px;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.category_item_active {
+  /* width: 187px; */
+  color: rgba(255,255,255,1);
+  /* position: absolute; */
+  /* top: 5px;
+  left: 51px; */
+
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 20px;
+  /* opacity: 1;
+  text-align: left; */
+}
+
+.category_item_inactive {
+  /* width: 187px; */
+  color: rgba(255,255,255,1);
+  /* position: absolute; */
+  /* top: 5px;
+  left: 51px; */
+  font-family: Poppins;
+  font-weight: Medium;
+  /* font-size: 2px; */
+  /* opacity: 1;
+  text-align: left; */
+}
+
+.v117_387 {
+  width: 288px;
+  height: 40px;
+  background: linear-gradient(rgba(80,117,173,1), rgba(112,140,174,1));
+  padding: 5px 70px;
+  margin: 10px;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 303px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_388 {
+  width: 143px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 5px;
+  left: 73px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_389 {
+  width: 288px;
+  height: 40px;
+  background: rgba(255,255,255,0.10000000149011612);
+  padding: 5px 70px;
+  margin: 10px;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 606px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_390 {
+  width: 104px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 5px;
+  left: 92px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_391 {
+  width: 288px;
+  height: 40px;
+  background: rgba(255,255,255,0.10000000149011612);
+  padding: 5px 70px;
+  margin: 10px;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 909px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_392 {
+  width: 117px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 5px;
+  left: 86px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_393 {
+  width: 423px;
+  height: 130px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_393.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 406px;
+  overflow: hidden;
+}
+.v117_394 {
+  width: 423px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
+}
+.v117_395 {
+  width: 230px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 0px;
+  left: 93px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 40px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_396 {
+  width: 100%;
+  height: 1815px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_396.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 230px;
+  left: 0px;
+  overflow: hidden;
+}
+.v117_397 {
+  width: 389px;
+  height: 595px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_397.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v117_398 {
+  width: 389px;
+  height: 595px;
+  background: rgba(255,255,255,0.10000000149011612);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v117_399 {
+  width: 83px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_400 {
+  width: 142px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 466px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 14px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_401 {
+  width: 92px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 449px;
+  left: 263px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_402 {
+  width: 337px;
+  height: 380px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_402.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_403 {
+  width: 51px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 278px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_404 {
+  width: 337px;
+  height: 50px;
+  background: linear-gradient(rgba(80,117,173,1), rgba(112,140,174,1));
+  padding: 10px 20px;
+  margin: 10px;
+  opacity: 0.36000001430511475;
+  position: absolute;
+  top: 519px;
+  left: 26px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_405 {
+  width: 72px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 10px;
+  left: 133px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_406 {
+  width: 389px;
+  height: 595px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_406.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 404px;
+  overflow: hidden;
+}
+.v117_407 {
+  width: 389px;
+  height: 595px;
+  background: rgba(255,255,255,0.10000000149011612);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v117_408 {
+  width: 83px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_409 {
+  width: 142px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 466px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 14px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_410 {
+  width: 116px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 449px;
+  left: 263px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_411 {
+  width: 51px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 278px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_412 {
+  width: 337px;
+  height: 50px;
+  background: linear-gradient(rgba(80,117,173,1), rgba(112,140,174,1));
+  padding: 10px 20px;
+  margin: 10px;
+  opacity: 0.36000001430511475;
+  position: absolute;
+  top: 519px;
+  left: 26px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_413 {
+  width: 72px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 10px;
+  left: 133px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_414 {
+  width: 337px;
+  height: 380px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_414.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  overflow: hidden;
+}
+.v117_415 {
+  width: 337px;
+  height: 380px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_415.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_416 {
+  width: 589px;
+  height: 393px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_416.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 3px;
+  left: 127px;
+  overflow: hidden;
+}
+.v117_417 {
+  width: 389px;
+  height: 595px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_417.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 610px;
+  left: 808px;
+  overflow: hidden;
+}
+.v117_418 {
+  width: 389px;
+  height: 595px;
+  background: rgba(255,255,255,0.10000000149011612);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v117_419 {
+  width: 83px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_420 {
+  width: 142px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 466px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 14px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_421 {
+  width: 135px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 449px;
+  left: 245px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_422 {
+  width: 51px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 278px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_423 {
+  width: 337px;
+  height: 50px;
+  background: linear-gradient(rgba(80,117,173,1), rgba(112,140,174,1));
+  padding: 10px 20px;
+  margin: 10px;
+  opacity: 0.36000001430511475;
+  position: absolute;
+  top: 519px;
+  left: 26px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_424 {
+  width: 72px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 10px;
+  left: 133px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_425 {
+  width: 337px;
+  height: 380px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_425.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  overflow: hidden;
+}
+.v117_426 {
+  width: 337px;
+  height: 380px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_426.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_427 {
+  width: 856px;
+  height: 481px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_427.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 7px;
+  left: 266px;
+  overflow: hidden;
+}
+.v117_428 {
+  width: 389px;
+  height: 595px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_428.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 809px;
+  overflow: hidden;
+}
+.v117_429 {
+  width: 389px;
+  height: 595px;
+  background: rgba(255,255,255,0.10000000149011612);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v117_430 {
+  width: 83px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_431 {
+  width: 142px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 466px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 14px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_432 {
+  width: 104px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 449px;
+  left: 263px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_433 {
+  width: 51px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 278px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_434 {
+  width: 337px;
+  height: 50px;
+  background: linear-gradient(rgba(80,117,173,1), rgba(112,140,174,1));
+  padding: 10px 20px;
+  margin: 10px;
+  opacity: 0.36000001430511475;
+  position: absolute;
+  top: 519px;
+  left: 26px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_435 {
+  width: 72px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 10px;
+  left: 133px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_436 {
+  width: 337px;
+  height: 380px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_436.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  overflow: hidden;
+}
+.v117_437 {
+  width: 337px;
+  height: 380px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_437.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_438 {
+  width: 589px;
+  height: 393px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_438.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 3px;
+  left: 127px;
+  overflow: hidden;
+}
+.v117_439 {
+  width: 521px;
+  height: 390px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_439.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 94px;
+  overflow: hidden;
+}
+.v117_440 {
+  width: 389px;
+  height: 595px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_440.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 610px;
+  left: 0px;
+  overflow: hidden;
+}
+.v117_441 {
+  width: 389px;
+  height: 595px;
+  background: rgba(255,255,255,0.10000000149011612);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v117_442 {
+  width: 83px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_443 {
+  width: 142px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 466px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 14px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_444 {
+  width: 136px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 449px;
+  left: 245px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_445 {
+  width: 51px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 278px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_446 {
+  width: 337px;
+  height: 50px;
+  background: linear-gradient(rgba(80,117,173,1), rgba(112,140,174,1));
+  padding: 10px 20px;
+  margin: 10px;
+  opacity: 0.36000001430511475;
+  position: absolute;
+  top: 519px;
+  left: 26px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_447 {
+  width: 72px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 10px;
+  left: 133px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_448 {
+  width: 337px;
+  height: 380px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_448.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  overflow: hidden;
+}
+.v117_449 {
+  width: 337px;
+  height: 380px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_449.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_450 {
+  width: 579px;
+  height: 386px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_450.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 1px;
+  left: 113px;
+  overflow: hidden;
+}
+.v117_451 {
+  width: 389px;
+  height: 595px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_451.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 1220px;
+  left: 0px;
+  overflow: hidden;
+}
+.v117_452 {
+  width: 389px;
+  height: 595px;
+  background: rgba(255,255,255,0.10000000149011612);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v117_453 {
+  width: 83px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_454 {
+  width: 142px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 466px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 14px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_455 {
+  width: 104px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 449px;
+  left: 263px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_456 {
+  width: 51px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 278px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_457 {
+  width: 337px;
+  height: 50px;
+  background: linear-gradient(rgba(80,117,173,1), rgba(112,140,174,1));
+  padding: 10px 20px;
+  margin: 10px;
+  opacity: 0.36000001430511475;
+  position: absolute;
+  top: 519px;
+  left: 26px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_458 {
+  width: 72px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 10px;
+  left: 133px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_459 {
+  width: 337px;
+  height: 380px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_459.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  overflow: hidden;
+}
+.v117_460 {
+  width: 337px;
+  height: 380px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_460.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_461 {
+  width: 688px;
+  height: 387px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_461.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 170px;
+  overflow: hidden;
+}
+.v117_462 {
+  width: 389px;
+  height: 595px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_462.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 1220px;
+  left: 404px;
+  overflow: hidden;
+}
+.v117_463 {
+  width: 389px;
+  height: 595px;
+  background: rgba(255,255,255,0.10000000149011612);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v117_464 {
+  width: 83px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_465 {
+  width: 142px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 466px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 14px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_466 {
+  width: 105px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 449px;
+  left: 263px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_467 {
+  width: 51px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 278px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_468 {
+  width: 337px;
+  height: 50px;
+  background: linear-gradient(rgba(80,117,173,1), rgba(112,140,174,1));
+  padding: 10px 20px;
+  margin: 10px;
+  opacity: 0.36000001430511475;
+  position: absolute;
+  top: 519px;
+  left: 26px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_469 {
+  width: 72px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 10px;
+  left: 133px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_470 {
+  width: 337px;
+  height: 380px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_470.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  overflow: hidden;
+}
+.v117_471 {
+  width: 337px;
+  height: 380px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_471.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_472 {
+  width: 575px;
+  height: 395px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_472.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 13px;
+  left: 133px;
+  overflow: hidden;
+}
+.v117_473 {
+  width: 472px;
+  height: 415px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_473.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 18px;
+  left: 60px;
+  overflow: hidden;
+}
+.v117_474 {
+  width: 389px;
+  height: 595px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_474.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 610px;
+  left: 404px;
+  overflow: hidden;
+}
+.v117_475 {
+  width: 389px;
+  height: 595px;
+  background: rgba(255,255,255,0.10000000149011612);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v117_554 {
+  width: 337px;
+  height: 50px;
+  background: linear-gradient(rgba(80,117,173,1), rgba(112,140,174,1));
+  padding: 10px 20px;
+  margin: 10px;
+  opacity: 0.36000001430511475;
+  position: absolute;
+  top: 519px;
+  left: 26px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_555 {
+  width: 72px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 10px;
+  left: 133px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_476 {
+  width: 83px;
+  color: rgba(255,255,255,0.10000000149011612);
+  position: absolute;
+  top: 426px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_477 {
+  width: 142px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 466px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 14px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_478 {
+  width: 53px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 449px;
+  left: 276px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_479 {
+  width: 51px;
+  color: rgba(255,255,255,0.10000000149011612);
+  position: absolute;
+  top: 426px;
+  left: 278px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_482 {
+  width: 337px;
+  height: 380px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_482.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  overflow: hidden;
+}
+.v117_483 {
+  width: 337px;
+  height: 380px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_483.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_484 {
+  width: 342px;
+  height: 513px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_484.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 77px;
+  left: 0px;
+  overflow: hidden;
+}
+.v117_485 {
+  width: 389px;
+  height: 595px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_485.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 1220px;
+  left: 808px;
+  overflow: hidden;
+}
+.v117_486 {
+  width: 389px;
+  height: 595px;
+  background: rgba(255,255,255,0.10000000149011612);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v117_487 {
+  width: 83px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_488 {
+  width: 142px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 466px;
+  left: 26px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 14px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_489 {
+  width: 77px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 449px;
+  left: 263px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_490 {
+  width: 51px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 426px;
+  left: 278px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_491 {
+  width: 337px;
+  height: 50px;
+  background: linear-gradient(rgba(80,117,173,1), rgba(112,140,174,1));
+  padding: 10px 20px;
+  margin: 10px;
+  opacity: 0.36000001430511475;
+  position: absolute;
+  top: 519px;
+  left: 26px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_492 {
+  width: 72px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 10px;
+  left: 133px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_493 {
+  width: 337px;
+  height: 380px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_493.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  overflow: hidden;
+}
+.v117_494 {
+  width: 337px;
+  height: 380px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_494.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+}
+.v117_495 {
+  width: 676px;
+  height: 380px;
+  background: url("../../assets/Plantillas/mainPage/images/v117_495.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 170px;
+  overflow: hidden;
+}
+.v117_526 {
+  width: 100%;
+  height: 202px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_526.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 3070px;
+  left: 161px;
+  overflow: hidden;
+}
+.v117_527 {
+  width: 133px;
+  height: 202px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_527.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 419px;
+  overflow: hidden;
+}
+.v117_528 {
+  width: 63px;
+  color: rgba(255,255,255,1);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
+}
+.v117_529 {
+  width: 59px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_530 {
+  width: 71px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 93px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_531 {
+  width: 133px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 136px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_532 {
+  width: 30px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 179px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_533 {
+  width: 119px;
+  height: 202px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_533.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 683px;
+  overflow: hidden;
+}
+.v117_534 {
+  width: 103px;
+  color: rgba(255,255,255,1);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
+}
+.v117_535 {
+  width: 75px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_536 {
+  width: 116px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 93px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_537 {
+  width: 119px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 136px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_538 {
+  width: 66px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 179px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_539 {
+  width: 288px;
+  height: 119px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_539.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v117_540 {
+  width: 288px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_541 {
+  width: 107px;
+  /* color: url("../../assets/Plantillas/mainPage/images/v117_541.png"); */
+  position: relative;
+  top: 0px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
+}
+.v117_542 {
+  width: 264px;
+  height: 161px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_542.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 933px;
+  overflow: hidden;
+}
+.v117_543 {
+  width: 84px;
+  color: rgba(255,255,255,1);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
+}
+.v117_544 {
+  width: 104px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_545 {
+  width: 264px;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  top: 93px;
+  left: 0px;
+  font-family: Poppins;
+  font-weight: Medium;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v117_546 {
+  width: 155px;
+  height: 25px;
+  /* background: url("../../assets/Plantillas/mainPage/images/v117_546.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 40px;
+  opacity: 1;
+  position: absolute;
+  top: 136px;
+  left: 0px;
+  overflow: hidden;
+}
+.name {
+  color: #fff;
+}
+.name {
+  color: #fff;
+}
+.name {
+  color: #fff;
+}
