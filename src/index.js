@@ -9,12 +9,13 @@ import RegiterPage from './components/mainPage';
 import SignupPage from './components/signUp';
 import VerificationPage from './components/verificationPage';
 import MainPage from './components/mainPage';
+import AdminLoginPage from './components/Admin/login';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    // element: <LoginPage />,
-    element: <MainPage />
+    element: <LoginPage />,
+    // element: <MainPage />
     // element: <SignupPage />,
     // element: <VerificationPage />,
 
@@ -31,6 +32,15 @@ const router = createBrowserRouter([
   {
     path: "/verification",
     element: <VerificationPage />,
+  },
+  {
+    path: "/adminLogin",
+    element: <AdminLoginPage />,
+    // element: <MainPage />
+    // element: <SignupPage />,
+    // element: <VerificationPage />,
+
+
   },
 ]);
 

@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import "./style.css";
-import LogoHeader from "../../shared/logoHeader";
+import LogoHeader from "../../../shared/logoHeader";
 
-function LoginPage() {
+function AdminLoginPage() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [intents, setIntents] = useState({
@@ -66,7 +66,7 @@ function LoginPage() {
     let resp;
     try {
       resp = await axios.post(
-        `http://localhost:8080/api/login/iniciarSesion?email=${user}&contrasena=${password}`
+        `http://localhost:8080/api/login/iniciarSesionAdmin?email=${user}&contrasena=${password}`
       );
       console.log({ res: resp.data });
 
@@ -105,7 +105,7 @@ function LoginPage() {
       <LogoHeader style="border-radius: 50%;" />
 
       <form onSubmit={login}>
-        <h2>Ingreso</h2>
+        <h2>Ingreso-Admin</h2>
         <input
           type="text"
           value={user}
@@ -130,4 +130,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default AdminLoginPage;

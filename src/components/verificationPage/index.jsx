@@ -16,7 +16,7 @@ const VerificationPage = () => {
     let resp;
     try {
       resp = await axios.post(
-        `http://localhost:8080/api/usuarios?numero=${verificationCode}`
+        `http://localhost:8080/api/usuarios?Numero=${verificationCode}`
       );
       console.log({ res: resp.data });
       navigate("/");
