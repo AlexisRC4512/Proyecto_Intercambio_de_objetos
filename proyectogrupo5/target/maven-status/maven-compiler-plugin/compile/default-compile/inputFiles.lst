@@ -1,34 +1,41 @@
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\UsuarioAdminController.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Usuario.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Usuarios_temporales.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Response\ApiResponse.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\GeneroService.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\SecurityConfig.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\CategoriaController.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Categoria.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\configurations\CORSConfig.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\SubcategoriaService.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\UsuarioService.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\UbigeoService.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\UsuarioController.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\UsuarioAdminService.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Response\InicioSesionResponse.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\SubcategoriaRepository.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\UsuarioAdmin.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\GeneroRepository.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\LoginController.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\UbigeoController.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\UsuarioAdminRepository.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Subcategoria.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\CategoriaService.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\UsuarioTemporalController.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\CategoriaRepository.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\GeneroController.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\UbigeoRepository.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\UsuarioRepository.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\SubcategoriaController.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\UsuariotemporalRepository.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Ubigeo.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\Usuario_temporalService.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Genero.java
-C:\Users\HP\Desktop\Nueva carpeta (3)\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Proyectogrupo5Application.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\PublicacionRepository.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\UbigeoService.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\Usuario_temporalService.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\GeneroController.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Imagen.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\SecurityConfig.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\CategoriaRepository.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\UsuarioAdminController.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\SubcategoriaRepository.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Subcategoria.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\UsuarioAdminRepository.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\UbigeoController.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Publicacion.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\PublicacionService.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\configurations\CORSConfig.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Usuarios_temporales.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\GeneroRepository.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Genero.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\UsuarioRepository.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\GeneroService.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Ubigeo.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\SubcategoriaController.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\UsuariotemporalRepository.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\UsuarioService.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Proyectogrupo5Application.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\CategoriaService.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\UbigeoRepository.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Categoria.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Repository\ImagenRepository.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Response\ApiResponse.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\UsuarioController.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\LoginController.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\Usuario.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\UsuarioTemporalController.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\PublicacionController.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\ImagenService.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Response\InicioSesionResponse.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\SubcategoriaService.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Model\UsuarioAdmin.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Service\UsuarioAdminService.java
+C:\Users\HP\Desktop\Ep3\Proyecto_Intercambio_de_objetos\proyectogrupo5\src\main\java\pe\isil\proyectogrupo5\Controller\CategoriaController.java
