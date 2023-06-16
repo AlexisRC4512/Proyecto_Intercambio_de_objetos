@@ -10,11 +10,17 @@ import SignupPage from './components/signUp';
 import VerificationPage from './components/verificationPage';
 import MainPage from './components/mainPage';
 import AdminLoginPage from './components/Admin/login';
+import AdminTablas from './components/Admin/tablas';
+import FormPost from './components/Admin/formPost/formPost';
+import ImageUploader from './components/Admin/formPost/uploadFiles';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LoginPage />,
+    // element: <ImageUploader />
+    element: <FormPost />
+    // element: <AdminTablas />,
+    // element: <LoginPage />,
     // element: <MainPage />
     // element: <SignupPage />,
     // element: <VerificationPage />,

@@ -1,0 +1,16 @@
+.categories-filter {
+    display: flex;
+    justify-content: flex-start;
+
+    .dropdown {
+        margin: 5px;
+    }
+}
+
+.postImages {
+    text-align: left;
+}
+
+.postData {
+    margin-top: 15px;
+}

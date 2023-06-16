@@ -9,7 +9,7 @@ const Header = () => {
       <div className="v117_343">
         <div className="v117_354">
           <span className="v117_356">
-            Hola, Carlos ¿Intercambiamos algo?
+            Hola,  ¿Intercambiamos algo?
           </span>
           <div className="xd_v117_357">
             <div className="v117_358">
