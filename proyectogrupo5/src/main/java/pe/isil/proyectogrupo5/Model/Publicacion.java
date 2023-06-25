@@ -37,16 +37,16 @@ public class Publicacion {
     private Date fec_publicacion;
 
     @Column(name = "id_estado")
-    private int id_estado;
+    private int idEstado;
 
     @Column(name = "id_condicion")
-    private int id_condicion;
+    private int idCondicion;
 
     @Column(name = "id_usuario")
-    private int id_usuario;
+    private int codigoUsuario;
 
     @Column(name = "ano_fabricacion")
-    private int ano_fabricacion;
+    private int ano_Fabricacion;
 
     @ManyToOne
     @JoinColumn(name = "imagen")

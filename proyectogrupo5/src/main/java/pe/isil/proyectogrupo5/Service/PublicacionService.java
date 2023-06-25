@@ -26,6 +26,10 @@ public class PublicacionService {
     }
 
 
+    public List<Publicacion> findBycodigoUsuario(int idUsuario) {
+        return publicacionRepository.findBycodigoUsuario(idUsuario);
+    }
+
 
 
     public void deleteById(Long id) {

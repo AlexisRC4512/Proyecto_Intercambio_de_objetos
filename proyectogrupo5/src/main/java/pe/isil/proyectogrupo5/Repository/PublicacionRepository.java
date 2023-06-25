@@ -12,5 +12,5 @@ import java.util.List;
 public interface PublicacionRepository extends JpaRepository<Publicacion, Long> {
     @EntityGraph(attributePaths = {"imagen", "id_categoria", "id_subcategoria"})
     List<Publicacion> findAll();
-
+    List<Publicacion> findBycodigoUsuario(int idUsuario);
 }

@@ -33,7 +33,7 @@ public class PublicacionController {
 
     @PostMapping("/imagen")
     @ResponseBody
-    public String uploadImagen(@RequestParam("imagen1") MultipartFile imagen1,
+    public int uploadImagen(@RequestParam("imagen1") MultipartFile imagen1,
                                @RequestParam("imagen2") MultipartFile imagen2,
                                @RequestParam("imagen3") MultipartFile imagen3,
                                @RequestParam("imagen4") MultipartFile imagen4) {
@@ -43,7 +43,7 @@ public class PublicacionController {
         imagen.setImagen3(saveImagen(imagen3));
         imagen.setImagen4(saveImagen(imagen4));
         imagenService.save(imagen);
-        return "Imágenes guardadas con éxito";
+        return imagen.getId_imagen().intValue();
     }
 
     private String saveImagen(MultipartFile file) {
@@ -84,7 +84,7 @@ public class PublicacionController {
         return ResponseEntity.ok(publicaciones);
     }
 
-    @PutMapping("/publicacion/{id}")
+    @PutMapping("/publicacionEdit/{id}")
     public Publicacion update(@PathVariable Long id, @RequestBody Publicacion publicacion) {
         Publicacion existingPublicacion = publicacionService.findById(id);
         BeanUtils.copyProperties(publicacion, existingPublicacion, "id_publicacion");
@@ -123,5 +123,11 @@ public class PublicacionController {
     @DeleteMapping("/publicacion/{id}")
     public void delete(@PathVariable Long id) {
         publicacionService.deleteById(id);
+    }
+
+    @GetMapping("/usuario/{idUsuario}")
+    public ResponseEntity<List<Publicacion>> findByUserId(@PathVariable int idUsuario) {
+        List<Publicacion> publicaciones = publicacionService.findBycodigoUsuario(idUsuario);
+        return ResponseEntity.ok(publicaciones);
     }
 }
