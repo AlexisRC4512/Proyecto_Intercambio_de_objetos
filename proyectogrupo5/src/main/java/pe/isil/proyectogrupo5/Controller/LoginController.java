@@ -31,13 +31,8 @@ public class LoginController {
         }
     }
     @PostMapping("/iniciarSesion")
-    public ResponseEntity<InicioSesionResponse> iniciarSesion(@RequestParam String email, @RequestParam String contrasena) {
-        InicioSesionResponse inicioSesionResponse = usuarioService.iniciarSesion(email, contrasena);
-        if (inicioSesionResponse.isSuccess()) {
-            return ResponseEntity.ok().body(inicioSesionResponse);
-        } else {
-            return ResponseEntity.badRequest().body(inicioSesionResponse);
-        }
+    public int iniciarSesion(@RequestParam String email, @RequestParam String contrasena) {
+       return  usuarioService.iniciarSesion(email, contrasena);
     }
     @PutMapping("/CambiarContraseña")
     public Usuario CambiarContraseña(@RequestParam String Email, @RequestParam String Contraseña) {

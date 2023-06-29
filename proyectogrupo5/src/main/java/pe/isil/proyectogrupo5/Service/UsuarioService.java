@@ -91,19 +91,19 @@ public class UsuarioService {
     public List<Ubigeo> obtenerUbigeos() {
         return ubigeoRepository.findAll();
     }
-    public InicioSesionResponse iniciarSesion(String email, String password) {
+    public int iniciarSesion(String email, String password) {
         Usuario usuario = usuarioRepository.findByEmail(email);
 
         if (usuario == null) {
-            return new InicioSesionResponse(false, "El usuario no existe");
+            return 0;
         }
 
         boolean passwordMatch = passwordEncoder.matches(password, usuario.getContrasena());
         if (passwordMatch) {
-            return new InicioSesionResponse(true, "Inicio de Sesion correcto");
+            return usuario.getId();
+        }else{
+            return -1;
         }
-
-        return new InicioSesionResponse(false, "La contraseña es incorrecta");
     }
     public Usuario RecuperarContraseña(String email2) {
 
@@ -123,9 +123,9 @@ public class UsuarioService {
 
     public Usuario CambiarDeContraseña(String email2,String Nuevacontraseña){
         Usuario usuario = usuarioRepository.findByEmail(email2);
-
+        String contrasenaEncriptada = passwordEncoder.encode(Nuevacontraseña);
         if (usuario!=null){
-           usuario.setContrasena(Nuevacontraseña);
+           usuario.setContrasena(contrasenaEncriptada);
         }
         return usuarioRepository.save(usuario);
     }
