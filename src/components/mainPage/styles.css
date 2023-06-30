@@ -2637,3 +2637,8 @@ body {
   overflow: hidden;
   color: white;
 }
+
+.btnBlueactive {
+  background: #254280f5 !important;
+  opacity: 1;
+}

@@ -21,8 +21,6 @@ function AdminLoginPage() {
   const login = async (e) => {
     e.preventDefault();
 
-    const isBlock = false;
-
     if (intents.counter >= 4) {
       const currentTime = new Date();
       console.log({
@@ -68,9 +66,9 @@ function AdminLoginPage() {
       resp = await axios.post(
         `http://localhost:8080/api/login/iniciarSesionAdmin?email=${user}&contrasena=${password}`
       );
-      console.log({ res: resp.data });
+      console.log({ res: resp.data, info: parseInt(resp.data) });
 
-      if (resp.data.success) {
+      if (parseInt(resp.data) > 0) {
         navigate("/mainPage");
       } else {
         console.log("krja");
@@ -82,7 +80,10 @@ function AdminLoginPage() {
           time: new Date(),
         });
         localStorage.setItem("intents", JSON.stringify(intents));
+        throw new Error("Somenthing went wrong!")
       }
+      
+
     } catch (error) {
       Swal.fire({
         title: "Credenciales incorrectas!",

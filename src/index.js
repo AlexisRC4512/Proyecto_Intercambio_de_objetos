@@ -18,14 +18,16 @@ const router = createBrowserRouter([
   {
     path: "/",
     // element: <ImageUploader />
-    element: <FormPost />
+    // element: <FormPost />
     // element: <AdminTablas />,
-    // element: <LoginPage />,
+    element: <LoginPage />,
     // element: <MainPage />
     // element: <SignupPage />,
     // element: <VerificationPage />,
-
-
+  },
+  {
+    path: "/updatePost",
+    element: <FormPost />
   },
   {
     path: "/mainPage",

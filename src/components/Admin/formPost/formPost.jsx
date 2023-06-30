@@ -23,7 +23,7 @@ const FormPost = () => {
     categorie: "",
     idCategorie: "",
     subCategorie: "",
-    idSubcategorie: ""
+    idSubcategorie: "",
   });
 
   const [yearList, setYearList] = useState([]);
@@ -41,9 +41,11 @@ const FormPost = () => {
     imagen: {
       id_imagen: null,
     },
-  }
+  };
   const [dataPost, setDataPost] = useState(postDataDefaultValue);
 
+  // To update data
+  const [toUpdate, setToUpdate] = useState(false);
 
   const getCategories = async () => {
     const uri = "http://localhost:8080/api/categorias";
@@ -69,12 +71,32 @@ const FormPost = () => {
     setSubcategories(subCategoriesFromApi);
 
     setCategorieSelected(categories[0].nombre);
-    setCategorieNames({
-      categorie: categories[0].nombre,
-      idCategorie: categories[0].id_categoria,
-      subCategorie: subcatName.nombre,
-      idSubcategorie: subcatName.idSubcategoria
-    });
+    if (toUpdate) {
+      console.log({categories___0: categories});
+      let catName = categories.filter(
+        (c) => c.id_categoria === dataPost.id_categoria
+      )[0];
+      let subcatName = subcategories.filter(
+        (c) => c.idSubcategoria === dataPost.id_subcategoria
+      )[0];
+      console.log({
+        catName,
+        subcatName
+      });
+      setCategorieNames({
+        categorie: catName.nombre,
+        idCategorie: catName.id_categoria,
+        subCategorie: subcatName.nombre,
+        idSubcategorie: subcatName.idSubcategoria,
+      });
+    } else {
+      setCategorieNames({
+        categorie: categories[0].nombre,
+        idCategorie: categories[0].id_categoria,
+        subCategorie: subcatName.nombre,
+        idSubcategorie: subcatName.idSubcategoria,
+      });
+    }
   };
 
   function setIdImage(id) {
@@ -103,7 +125,7 @@ const FormPost = () => {
       setCategorieNames({
         ...categorieNames,
         subCategorie: subcatName.nombre,
-        idSubcategorie: subcatName.idSubcategoria
+        idSubcategorie: subcatName.idSubcategoria,
       });
     }
 
@@ -112,7 +134,7 @@ const FormPost = () => {
       setCategorieNames({
         ...categorieNames,
         categorie: catName.nombre,
-        idCategorie: catName.id_categoria
+        idCategorie: catName.id_categoria,
       });
 
       const uri = `http://localhost:8080/api/subcategorias/getCategoriaId?categoriaId=${value}`;
@@ -129,12 +151,12 @@ const FormPost = () => {
       setSubcategories(subCategoriesFromApi);
     }
 
-    console.log({dataPost});
+    console.log({ dataPost });
 
     const currentDate = new Date();
     const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript comienzan en 0, por lo tanto, se suma 1
-    const day = String(currentDate.getDate()).padStart(2, '0');
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Los meses en JavaScript comienzan en 0, por lo tanto, se suma 1
+    const day = String(currentDate.getDate()).padStart(2, "0");
 
     const formattedDate = `${year}-${month}-${day}`;
 
@@ -143,7 +165,7 @@ const FormPost = () => {
       [field]: value,
       fec_publicacion: formattedDate,
       id_categoria: categorieNames.idCategorie,
-      id_subcategoria: categorieNames.idSubcategorie
+      id_subcategoria: categorieNames.idSubcategorie,
     });
   };
 
@@ -164,7 +186,6 @@ const FormPost = () => {
   };
 
   const validation = (dataPost) => {
-
     if (!dataPost.imagen.id_imagen) {
       Swal.fire({
         title: "Error!",
@@ -191,23 +212,41 @@ const FormPost = () => {
     e.preventDefault();
 
     setTimeout(() => {
-      console.log("1 Segundo esperado")
+      console.log("1 Segundo esperado");
     }, 1000);
 
     try {
-      console.log({dataPost});
+      console.log({ dataPost });
 
       validation(dataPost);
 
+      if (toUpdate) {
+        const dataLS = JSON.parse(localStorage.getItem("productToUpdate")).product;
 
-      const resp = await axios.post(
-        `http://localhost:8080/api/publicacion/publicacion`,
-        dataPost
-      );
-      console.log({ res_submit_product: resp.data });
-      setDataPost(postDataDefaultValue)
-
-      navigate("/mainPage");
+        const uri = `http://localhost:8080/api/publicacion/publicacionEdit/${dataLS.id_publicacion}`;
+        const resp = await axios.put(
+          uri,
+          {
+            ...dataLS,
+            ...dataPost,
+            ano_Fabricacion: dataPost.ano_fabricacion
+          }
+        );
+        console.log({ res_submit_product: resp.data });
+        setDataPost(postDataDefaultValue);
+        localStorage.removeItem('productToUpdate')
+  
+        navigate("/mainPage");
+      } else {
+        const resp = await axios.post(
+          `http://localhost:8080/api/publicacion/publicacion`,
+          dataPost
+        );
+        console.log({ res_submit_product: resp.data });
+        setDataPost(postDataDefaultValue);
+  
+        navigate("/mainPage");
+      }      
     } catch (error) {
       console.log("Error call post-product-service:\n", error);
       return;
@@ -215,6 +254,26 @@ const FormPost = () => {
   };
 
   useEffect(() => {
+    const dataFromLS = JSON.parse(localStorage.getItem("productToUpdate"));
+    // setDataPost
+    if (dataFromLS) {
+      const dataLS = dataFromLS.product;
+      setToUpdate(true);
+      setDataPost({
+        id_categoria: dataLS.id_categoria,
+        id_subcategoria: dataLS.id_subcategoria,
+        titulo: dataLS.titulo,
+        descripcion: dataLS.descripcion,
+        fec_publicacion: dataLS.fec_publicacion,
+        id_estado: dataLS.idEstado,
+        id_condicion: dataLS.idCondicion,
+        id_usuario: dataLS.codigoUsuario,
+        ano_fabricacion: dataLS.ano_Fabricacion,
+        imagen: {
+          id_imagen: dataLS.imagen.id_imagen,
+        },
+      });
+    }
     const fetchData = async () => {
       await getCategories();
       setInit(true);
@@ -225,7 +284,7 @@ const FormPost = () => {
 
   return (
     <div className="formPostContainer container">
-      <h2>Registro de Producto</h2>
+      <h2>{toUpdate ? "Edición" : "Registro"} de Producto</h2>
       {!!categorieSelected && (
         <>
           <div className="categories-filter">
@@ -287,17 +346,19 @@ const FormPost = () => {
               </div>
             </div>
           </div>
-          <div className="postImages">
+          {/* {!toUpdate && (<div className="postImages">
             <span>Sube las imágenes de tu producto (deben ser 4):</span>
             {JSON.stringify({ id: dataPost.imagen.id_imagen }, null, 4)}
             <ImageUploader
               id={dataPost.imagen.id_imagen}
               EventChange={setIdImage}
             />
-          </div>
+          </div>)} */}
           <div className="postData">
             <form onSubmit={submitForm}>
-              <span className="text-form">Completa información sobre el producto</span>
+              <span className="text-form">
+                Completa información sobre el producto
+              </span>
               <label>Título</label>
               <input
                 type="text"

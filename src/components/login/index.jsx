@@ -9,14 +9,18 @@ function LoginPage() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [intents, setIntents] = useState({
-    counter: 0,
+    counter:  0,
     time: new Date(),
   });
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("init ,,,,");
-  });
+    const intentLocalStorage = JSON.parse(localStorage.getItem('intents'));
+    setIntents({
+      counter: intentLocalStorage.counter,
+      time: new Date(intentLocalStorage.time)
+    })
+  }, []);
 
   const login = async (e) => {
     e.preventDefault();
@@ -55,14 +59,6 @@ function LoginPage() {
       }
     }
 
-    // corre3cto
-    localStorage.setItem(
-      "user",
-      JSON.stringify({
-        user,
-        password,
-      })
-    );
     let resp;
     try {
       resp = await axios.post(
@@ -70,7 +66,11 @@ function LoginPage() {
       );
       console.log({ res: resp.data });
 
-      if (resp.data.success) {
+      if (parseInt(resp.data) > 0) {
+        localStorage.setItem(
+          "userId",
+          String(resp.data)
+        );
         navigate("/mainPage");
       } else {
         console.log("krja");
@@ -82,6 +82,7 @@ function LoginPage() {
           time: new Date(),
         });
         localStorage.setItem("intents", JSON.stringify(intents));
+        throw new Error("Somenthing went wrong!");
       }
     } catch (error) {
       Swal.fire({
@@ -92,10 +93,10 @@ function LoginPage() {
       });
       const addCount = intents.counter++;
       console.log({ addCount });
-      // setIntents({
-      //   counter: addCount,
-      //   time: new Date(),
-      // });
+      setIntents({
+        counter: addCount,
+        time: new Date(),
+      });
       localStorage.setItem("intents", JSON.stringify(intents));
     }
   };
