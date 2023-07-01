@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import pe.isil.proyectogrupo5.Model.Imagen;
 import pe.isil.proyectogrupo5.Model.Publicacion;
+import pe.isil.proyectogrupo5.Model.PublicacionHistorial;
 import pe.isil.proyectogrupo5.Service.ImagenService;
+import pe.isil.proyectogrupo5.Service.PublicacionHistorialService;
 import pe.isil.proyectogrupo5.Service.PublicacionService;
 
 import java.io.IOException;
@@ -19,6 +21,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -30,7 +33,8 @@ public class PublicacionController {
     private PublicacionService publicacionService;
     @Autowired
     private ImagenService imagenService;
-
+    @Autowired
+    private PublicacionHistorialService publicacionHistorialService;
     @PostMapping("/imagen")
     @ResponseBody
     public int uploadImagen(@RequestParam("imagen1") MultipartFile imagen1,
@@ -87,7 +91,13 @@ public class PublicacionController {
     @PutMapping("/publicacionEdit/{id}")
     public Publicacion update(@PathVariable Long id, @RequestBody Publicacion publicacion) {
         Publicacion existingPublicacion = publicacionService.findById(id);
+        Date fechaActual = new Date(System.currentTimeMillis());
+
         BeanUtils.copyProperties(publicacion, existingPublicacion, "id_publicacion");
+        PublicacionHistorial publicacionHistorial= new PublicacionHistorial(existingPublicacion.getId_publicacion().intValue(),existingPublicacion.getId_categoria(),existingPublicacion.getId_subcategoria(),
+                existingPublicacion.getTitulo(),existingPublicacion.getDescripcion(),existingPublicacion.getFec_publicacion(),existingPublicacion.getIdEstado(),existingPublicacion.getIdEstado(),existingPublicacion.getIdEstado(),existingPublicacion.getAno_Fabricacion(),
+                existingPublicacion.getImagen().getId_imagen().intValue(),fechaActual);
+        publicacionHistorialService.savePublicacionHistorial(publicacionHistorial);
         return publicacionService.save(existingPublicacion);
     }
     @GetMapping("/publicaciones/{id}")
