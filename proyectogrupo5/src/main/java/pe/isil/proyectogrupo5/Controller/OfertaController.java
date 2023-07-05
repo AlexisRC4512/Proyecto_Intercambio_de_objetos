@@ -1,0 +1,62 @@
+package pe.isil.proyectogrupo5.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import pe.isil.proyectogrupo5.Model.Oferta;
+import pe.isil.proyectogrupo5.Service.OfertaService;
+
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/ofertas")
+public class OfertaController {
+    @Autowired
+    private  OfertaService ofertaService;
+
+    @GetMapping
+    public ResponseEntity<List<Oferta>> obtenerTodasLasOfertas() {
+        List<Oferta> ofertas = ofertaService.obtenerTodasLasOfertas();
+        return new ResponseEntity<>(ofertas, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Oferta> obtenerOfertaPorId(@PathVariable("id_oferta") int idOferta) {
+        Oferta oferta = ofertaService.obtenerOfertaPorId(idOferta);
+        return new ResponseEntity<>(oferta, HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<Oferta> crearOferta(@RequestBody Oferta oferta) {
+        java.util.Date fechaActual = new java.util.Date();
+
+        Timestamp timestamp = new Timestamp(fechaActual.getTime());
+
+        oferta.setFecha(timestamp);
+        oferta.setEstado(1);
+        Oferta nuevaOferta = ofertaService.guardarOferta(oferta);
+        return new ResponseEntity<>(nuevaOferta, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Oferta> editarOferta(@PathVariable("id") int idOferta, @RequestBody Oferta oferta) {
+        oferta.setIdOferta(idOferta);
+        Oferta ofertaActualizada = ofertaService.editarOferta(oferta);
+        return new ResponseEntity<>(ofertaActualizada, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminarOferta(@PathVariable("id") int idOferta) {
+        ofertaService.eliminarOferta(idOferta);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    @GetMapping("/OfertaPublicacion")
+    public ResponseEntity<List<Oferta>> obtenerOfertasPorIdPublicacion(@RequestParam("idPublicacion1") int idPublicacion1,
+                                                                       @RequestParam("idPublicacion2") int idPublicacion2) {
+        List<Oferta> ofertas = ofertaService.obtenerOfertasporIdPublicacion(idPublicacion1, idPublicacion2);
+        return new ResponseEntity<>(ofertas, HttpStatus.OK);
+    }
+}
