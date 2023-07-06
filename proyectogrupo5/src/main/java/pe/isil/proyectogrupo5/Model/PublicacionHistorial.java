@@ -45,7 +45,6 @@ public class PublicacionHistorial {
     @Column(name = "ano_fabricacion")
     private Integer anoFabricacion;
 
-    private Integer imagen;
 
     @Column(name = "fec_registro")
     private Date fecRegistro;
@@ -53,7 +52,7 @@ public class PublicacionHistorial {
 
     public PublicacionHistorial(Integer idPublicacion, Integer idCategoria, Integer idSubcategoria, String titulo,
                                 String descripcion, Date fecPublicacion, Integer idEstado, Integer idCondicion, Integer idUsuario,
-                                Integer anoFabricacion, Integer imagen, Date fecRegistro) {
+                                Integer anoFabricacion, Date fecRegistro) {
         this.idPublicacion = idPublicacion;
         this.idCategoria = idCategoria;
         this.idSubcategoria = idSubcategoria;
@@ -64,7 +63,6 @@ public class PublicacionHistorial {
         this.idCondicion = idCondicion;
         this.idUsuario = idUsuario;
         this.anoFabricacion = anoFabricacion;
-        this.imagen = imagen;
         this.fecRegistro = fecRegistro;
     }
     public PublicacionHistorial() {}

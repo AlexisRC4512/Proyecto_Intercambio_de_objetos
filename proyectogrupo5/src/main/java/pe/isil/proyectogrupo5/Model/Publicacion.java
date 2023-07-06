@@ -48,9 +48,5 @@ public class Publicacion {
     @Column(name = "ano_fabricacion")
     private int ano_Fabricacion;
 
-    @ManyToOne
-    @JoinColumn(name = "imagen")
-    private Imagen imagen;
-
 
 }

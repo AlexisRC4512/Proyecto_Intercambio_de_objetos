@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import pe.isil.proyectogrupo5.Model.Imagen;
 import pe.isil.proyectogrupo5.Model.Publicacion;
 import pe.isil.proyectogrupo5.Model.PublicacionHistorial;
+import pe.isil.proyectogrupo5.Repository.ImagenRepository;
 import pe.isil.proyectogrupo5.Service.ImagenService;
 import pe.isil.proyectogrupo5.Service.PublicacionHistorialService;
 import pe.isil.proyectogrupo5.Service.PublicacionService;
@@ -29,23 +30,24 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/publicacion")
 public class PublicacionController {
+    public String ruta="C:/Users/HP/Desktop/Ruta_imagen/";
     @Autowired
     private PublicacionService publicacionService;
     @Autowired
     private ImagenService imagenService;
     @Autowired
     private PublicacionHistorialService publicacionHistorialService;
+    @Autowired
+    private ImagenRepository imagenRepository;
+
     @PostMapping("/imagen")
     @ResponseBody
     public int uploadImagen(@RequestParam("imagen1") MultipartFile imagen1,
-                               @RequestParam("imagen2") MultipartFile imagen2,
-                               @RequestParam("imagen3") MultipartFile imagen3,
-                               @RequestParam("imagen4") MultipartFile imagen4) {
+                               @RequestParam("id_publicacion") int  id_publicacion ) {
+       Publicacion objPublicacion= publicacionService.findById((long) id_publicacion);
         Imagen imagen = new Imagen();
         imagen.setImagen1(saveImagen(imagen1));
-        imagen.setImagen2(saveImagen(imagen2));
-        imagen.setImagen3(saveImagen(imagen3));
-        imagen.setImagen4(saveImagen(imagen4));
+        imagen.setPublicacion(objPublicacion);
         imagenService.save(imagen);
         return imagen.getId_imagen().intValue();
     }
@@ -58,7 +60,7 @@ public class PublicacionController {
             }
             String timeStamp = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
             String nombreImagen = "nuevoNombre" + timeStamp + ".jpg";
-            Path rutaCarpeta = Paths.get("C:/Users/HP/Desktop/Ruta_imagen/");
+            Path rutaCarpeta = Paths.get(ruta);
             if (!Files.exists(rutaCarpeta)) {
                 try {
                     Files.createDirectories(rutaCarpeta);
@@ -96,7 +98,7 @@ public class PublicacionController {
         BeanUtils.copyProperties(publicacion, existingPublicacion, "id_publicacion");
         PublicacionHistorial publicacionHistorial= new PublicacionHistorial(existingPublicacion.getId_publicacion().intValue(),existingPublicacion.getId_categoria(),existingPublicacion.getId_subcategoria(),
                 existingPublicacion.getTitulo(),existingPublicacion.getDescripcion(),existingPublicacion.getFec_publicacion(),existingPublicacion.getIdEstado(),existingPublicacion.getIdEstado(),existingPublicacion.getIdEstado(),existingPublicacion.getAno_Fabricacion(),
-                existingPublicacion.getImagen().getId_imagen().intValue(),fechaActual);
+                fechaActual);
         publicacionHistorialService.savePublicacionHistorial(publicacionHistorial);
         return publicacionService.save(existingPublicacion);
     }
@@ -111,8 +113,8 @@ public class PublicacionController {
 
     @GetMapping("/imagen/{nombreImagen}")
     public ResponseEntity<Resource> obtenerImagen(@PathVariable String nombreImagen) {
-        String rutaBase = "C:/Users/HP/Desktop/Ruta_imagen/";
-        String rutaImagen = rutaBase + nombreImagen;
+
+        String rutaImagen = ruta + nombreImagen;
         System.out.println("Ruta de la imagen solicitada: " + rutaImagen);
         try {
             Resource resource = new UrlResource(Paths.get(rutaImagen).toUri());
@@ -139,5 +141,9 @@ public class PublicacionController {
     public ResponseEntity<List<Publicacion>> findByUserId(@PathVariable int idUsuario) {
         List<Publicacion> publicaciones = publicacionService.findBycodigoUsuario(idUsuario);
         return ResponseEntity.ok(publicaciones);
+    }
+    @GetMapping("/imagenIdpublicacion/{idPublicacion}")
+    public List<String> getImagenesByPublicacionId(@PathVariable Long idPublicacion) {
+        return imagenService.findAllByPublicacionId(idPublicacion);
     }
 }

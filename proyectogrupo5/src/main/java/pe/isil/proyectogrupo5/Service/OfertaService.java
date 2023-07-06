@@ -2,6 +2,8 @@ package pe.isil.proyectogrupo5.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.isil.proyectogrupo5.Interfaces.OfertaPublicacion1;
+import pe.isil.proyectogrupo5.Interfaces.OfertaPublicacion2;
 import pe.isil.proyectogrupo5.Model.Oferta;
 import pe.isil.proyectogrupo5.Model.Publicacion;
 import pe.isil.proyectogrupo5.Repository.OfertaRepository;
@@ -36,6 +38,7 @@ public class OfertaService {
 
 
     }
+
     public List<Oferta> obtenerTodasLasOfertas() {
         return ofertaRepository.findAll();
     }
@@ -55,5 +58,11 @@ public class OfertaService {
         }
 
         return ofertas;
+    }
+    public List<OfertaPublicacion1> findByPublicacionIdUsuario1(int codigoUsuario) {
+        return ofertaRepository.findByPublicacion1_CodigoUsuario(codigoUsuario);
+    }
+    public List<OfertaPublicacion2> findByPublicacionIdUsuario2(int codigoUsuario) {
+        return ofertaRepository.findByPublicacion2_CodigoUsuario2(codigoUsuario);
     }
 }

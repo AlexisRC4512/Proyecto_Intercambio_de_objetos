@@ -20,13 +20,8 @@ public class Imagen {
 
     @Column(name = "imagen1")
     private String imagen1;
+    @ManyToOne
+    @JoinColumn(name = "id_publicacion")
+    private Publicacion publicacion;
 
-    @Column(name = "imagen2")
-    private String imagen2;
-
-    @Column(name = "imagen3")
-    private String imagen3;
-
-    @Column(name = "imagen4")
-    private String imagen4;
 }

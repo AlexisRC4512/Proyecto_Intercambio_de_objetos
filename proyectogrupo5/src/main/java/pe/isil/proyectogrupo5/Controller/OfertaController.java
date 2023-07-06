@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pe.isil.proyectogrupo5.Interfaces.OfertaPublicacion1;
+import pe.isil.proyectogrupo5.Interfaces.OfertaPublicacion2;
 import pe.isil.proyectogrupo5.Model.Oferta;
 import pe.isil.proyectogrupo5.Service.OfertaService;
 
@@ -58,5 +60,15 @@ public class OfertaController {
                                                                        @RequestParam("idPublicacion2") int idPublicacion2) {
         List<Oferta> ofertas = ofertaService.obtenerOfertasporIdPublicacion(idPublicacion1, idPublicacion2);
         return new ResponseEntity<>(ofertas, HttpStatus.OK);
+    }
+    @GetMapping("/ofertas/usuario1/{codigoUsuario}")
+    public ResponseEntity<List<OfertaPublicacion1>> getOfertasByPublicacionIdUsuario1(@PathVariable int codigoUsuario) {
+        List<OfertaPublicacion1> ofertas = ofertaService.findByPublicacionIdUsuario1(codigoUsuario);
+        return ResponseEntity.ok(ofertas);
+    }
+    @GetMapping("/ofertas/usuario2/{codigoUsuario}")
+    public ResponseEntity<List<OfertaPublicacion2>> getOfertasByPublicacionIdUsuario2(@PathVariable int codigoUsuario) {
+        List<OfertaPublicacion2> ofertas = ofertaService.findByPublicacionIdUsuario2(codigoUsuario);
+        return ResponseEntity.ok(ofertas);
     }
 }

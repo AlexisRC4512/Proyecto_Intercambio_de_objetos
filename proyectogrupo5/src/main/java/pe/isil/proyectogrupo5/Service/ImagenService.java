@@ -16,7 +16,9 @@ public class ImagenService {
         imagenRepository.save(imagen);
         return imagen;
     }
-
+    public List<String> findAllByPublicacionId(Long idPublicacion) {
+        return imagenRepository.findImageNamesByPublicacionId(idPublicacion);
+    }
     public List<Imagen> findAll() {
         return imagenRepository.findAll();
     }
