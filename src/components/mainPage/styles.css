@@ -833,7 +833,7 @@ body {
 
 .v117_398 {
   width: 389px;
-  height: 535px;
+  height: 550px;
   background: rgba(255, 255, 255, 0.10000000149011612);
   opacity: 1;
   /* posit  ive; */
@@ -2641,4 +2641,8 @@ body {
 .btnBlueactive {
   background: #254280f5 !important;
   opacity: 1;
+}
+
+.xd_v117_357 {
+  cursor: pointer;
 }

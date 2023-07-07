@@ -37,12 +37,15 @@ const FormPost = () => {
     id_estado: 3,
     id_condicion: 1,
     id_usuario: 3,
+    codigoUsuario: 0,
     ano_fabricacion: new Date().getFullYear(),
-    imagen: {
-      id_imagen: null,
-    },
+    // imagen: {
+    //   id_imagen: null,
+    // },
   };
+  // setFormDataToUpload(null);
   const [dataPost, setDataPost] = useState(postDataDefaultValue);
+  const [formDataToUpload, setFormDataToUpload] = useState(null);
 
   // To update data
   const [toUpdate, setToUpdate] = useState(false);
@@ -72,7 +75,7 @@ const FormPost = () => {
 
     setCategorieSelected(categories[0].nombre);
     if (toUpdate) {
-      console.log({categories___0: categories});
+      console.log({ categories___0: categories });
       let catName = categories.filter(
         (c) => c.id_categoria === dataPost.id_categoria
       )[0];
@@ -81,7 +84,7 @@ const FormPost = () => {
       )[0];
       console.log({
         catName,
-        subcatName
+        subcatName,
       });
       setCategorieNames({
         categorie: catName.nombre,
@@ -102,19 +105,23 @@ const FormPost = () => {
   function setIdImage(id) {
     setDataPost({
       ...dataPost,
-      imagen: {
-        id_imagen: id,
-      },
+      codigoUsuario: JSON.parse(localStorage.getItem("userId")),
+      // imagen: {
+      //   id_imagen: id,
+      // },
     });
   }
 
   const formSignup = async (field, value) => {
     if (field === "idImage") {
+      const userCode = JSON.parse(localStorage.getItem("userId"));
+      console.log({ userCode });
       setDataPost({
         ...dataPost,
-        imagen: {
-          id_imagen: value,
-        },
+        codigoUsuario: userCode,
+        // imagen: {
+        //   id_imagen: value,
+        // },
       });
     }
     if (field === "id_subcategoria") {
@@ -151,7 +158,7 @@ const FormPost = () => {
       setSubcategories(subCategoriesFromApi);
     }
 
-    console.log({ dataPost });
+    console.log({ dataPost_0: dataPost });
 
     const currentDate = new Date();
     const year = currentDate.getFullYear();
@@ -162,6 +169,7 @@ const FormPost = () => {
 
     setDataPost({
       ...dataPost,
+      codigoUsuario: JSON.parse(localStorage.getItem("userId")),
       [field]: value,
       fec_publicacion: formattedDate,
       id_categoria: categorieNames.idCategorie,
@@ -186,7 +194,8 @@ const FormPost = () => {
   };
 
   const validation = (dataPost) => {
-    if (!dataPost.imagen.id_imagen) {
+    const isUpdating = localStorage.getItem("productToUpdate");
+    if (!formDataToUpload && !isUpdating) {
       Swal.fire({
         title: "Error!",
         text: "Debe de cargar las imágenes primero.",
@@ -216,37 +225,47 @@ const FormPost = () => {
     }, 1000);
 
     try {
-      console.log({ dataPost });
+      console.log({ dataToPost: dataPost });
 
       validation(dataPost);
 
       if (toUpdate) {
-        const dataLS = JSON.parse(localStorage.getItem("productToUpdate")).product;
+        const dataLS = JSON.parse(
+          localStorage.getItem("productToUpdate")
+        ).product;
 
         const uri = `http://localhost:8080/api/publicacion/publicacionEdit/${dataLS.id_publicacion}`;
-        const resp = await axios.put(
-          uri,
-          {
-            ...dataLS,
-            ...dataPost,
-            ano_Fabricacion: dataPost.ano_fabricacion
-          }
-        );
+        const resp = await axios.put(uri, {
+          ...dataLS,
+          ...dataPost,
+          idEstado: 3,
+          idCondicion: 2,
+          ano_Fabricacion: dataPost.ano_fabricacion,
+          ano_fabricacion: dataPost.ano_fabricacion
+        });
         console.log({ res_submit_product: resp.data });
         setDataPost(postDataDefaultValue);
-        localStorage.removeItem('productToUpdate')
-  
+        localStorage.removeItem("productToUpdate");
+
         navigate("/mainPage");
       } else {
-        const resp = await axios.post(
-          `http://localhost:8080/api/publicacion/publicacion`,
-          dataPost
-        );
-        console.log({ res_submit_product: resp.data });
-        setDataPost(postDataDefaultValue);
-  
-        navigate("/mainPage");
-      }      
+        console.log({
+          dataPost_to_post: dataPost,
+          formDataToUpload,
+        });
+        // const resp = await axios.post(
+        //   `http://localhost:8080/api/publicacion/publicacion`,
+        //   dataPost
+        // );
+        // console.log({ res_submit_product: resp.data });
+        // setDataPost(postDataDefaultValue);
+
+        // const formData = formDataToUpload;
+        // formData.append("id_publicacion", resp.data.id_publicacion);
+        // await axios.post("http://localhost:8080/api/publicacion/imagen", formData);
+
+        // navigate("/mainPage");
+      }
     } catch (error) {
       console.log("Error call post-product-service:\n", error);
       return;
@@ -268,10 +287,12 @@ const FormPost = () => {
         id_estado: dataLS.idEstado,
         id_condicion: dataLS.idCondicion,
         id_usuario: dataLS.codigoUsuario,
-        ano_fabricacion: dataLS.ano_Fabricacion,
-        imagen: {
-          id_imagen: dataLS.imagen.id_imagen,
-        },
+        ano_fabricacion: dataLS.ano_Fabricacion | dataLS.ano_fabricacion,
+        codigoUsuario: JSON.parse(localStorage.getItem("userId")),
+
+        // imagen: {
+        //   id_imagen: dataLS.imagen.id_imagen,
+        // },
       });
     }
     const fetchData = async () => {
@@ -346,14 +367,12 @@ const FormPost = () => {
               </div>
             </div>
           </div>
-          {/* {!toUpdate && (<div className="postImages">
-            <span>Sube las imágenes de tu producto (deben ser 4):</span>
-            {JSON.stringify({ id: dataPost.imagen.id_imagen }, null, 4)}
-            <ImageUploader
-              id={dataPost.imagen.id_imagen}
-              EventChange={setIdImage}
-            />
-          </div>)} */}
+          {!toUpdate && (
+            <div className="postImages">
+              <span>Sube las imágenes de tu producto (deben ser 4):</span>
+              <ImageUploader EventChange={setFormDataToUpload} />
+            </div>
+          )}
           <div className="postData">
             <form onSubmit={submitForm}>
               <span className="text-form">

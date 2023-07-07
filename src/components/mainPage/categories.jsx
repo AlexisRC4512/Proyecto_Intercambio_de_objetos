@@ -6,7 +6,7 @@ import { productCondition, productStates } from "../../shared/constant";
 // import image5 from "../../assets/Plantillas/mainPage/images/v117_402.png";
 import "./styles.css";
 // import img from "../../assets/Ruta_imagen/nuevoNombre20230615204724833.jpg"
-import img from "../../assets/Ruta_imagen/nuevoNombre20230616175907098.jpg"
+//import img from "../../assets/Ruta_imagen/nuevoNombre20230616175907098.jpg"
 import { useNavigate } from "react-router-dom";
 
 
@@ -49,9 +49,14 @@ const Categories = () => {
 
   const toggleShowMyPosts = () => {
     setProductSelected(productList.filter(p => p.codigoUsuario === userId));
-    setProductSelected(productList.filter(p => p.id_categoria === categoriesList[0].id_categoria));
+    // setProductSelected(productList.filter(p => p.id_categoria === categoriesList[0].id_categoria));
     setReviewMyPosts(!reviewMyPosts);
 
+  }
+
+  const getImagesByPost = async (idPost) => {
+    let resp = await axios.get(`http://localhost:8080/api/publicacion/imagenIdpublicacion/${idPost}`);
+    return resp.data;
   }
 
   useEffect(() => {
@@ -60,8 +65,22 @@ const Categories = () => {
         `http://localhost:8080/api/publicacion/publicacion`
       );
       console.log({resp: resp.data});
-      setProductList(resp.data)
-      setProductSelected(resp.data.filter(p => p.id_categoria === resp.data[0].id_categoria))
+      const listaProducts = resp.data;
+      let productListFormated = []
+      // await listaProducts.map(async (product) => {
+      for (let j = 0; j < resp.data.length; j++) {
+        const product = resp.data[j];
+        const imagesByPost = await getImagesByPost(product.id_publicacion);
+
+        productListFormated.push({
+          ...product,
+          imagenes: imagesByPost && imagesByPost.length > 0 ? imagesByPost : false
+        })
+
+      };
+      console.log({productListFormated});
+      setProductList(productListFormated)
+      setProductSelected(productListFormated.filter(p => p.id_categoria === resp.data[0].id_categoria))
     }
     fetchData()
     getCategories()
@@ -101,17 +120,22 @@ const Categories = () => {
       <div className="container_product_list">
         {productSelected.map(item => (
           <div key={item.user} className="v117_398">
-            <img src={`../../assets/Ruta_imagen/${item.imagen.imagen1}`} className="imgProductItem" alt="product" />
+            {
+              item.imagenes && (
+                <img key={item.user} src={`../../assets/Ruta_imagen/${item.imagenes[0]}`} className="imgProductItem" alt="product" />
+              )
+            }
+
             {/* <div className="imgProductItem" style={{
               background: `url(${item.imageUrl})`
             }}></div> */}
             <div className="dataProductItem">
               <div className="name_offer">
                 <span className="username">{item.titulo}</span>
-                <span className="username">{item.id_publicacion}</span>
+                {/* <span className="username">{item.id_publicacion}</span> */}
                 <span className="offerText">{item.descripcion}</span>
-                <span className="productState">{productStates[item.idEstado]}</span>
-                <span className="productCondition">{productCondition[item.idCondicion]}</span>
+                <span className="productState">{productStates[item.idEstado]} | {productCondition[item.idCondicion]} </span>
+                {/* <span className="productCondition">{productCondition[item.idCondicion]}</span> */}
               </div>
               <div className="toSearch">
                 <span className="text_search">Busca:</span>

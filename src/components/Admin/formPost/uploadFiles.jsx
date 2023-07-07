@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const ImageUploader = ({ id, EventChange }) => {
+const ImageUploader = ({ EventChange }) => {
   const [selectedImages, setSelectedImages] = useState([]);
 
   const handleImageUpload = (event) => {
@@ -25,43 +25,47 @@ const ImageUploader = ({ id, EventChange }) => {
   };
 
   const handleUpload = () => {
+    const limitImages = 1
     try {
-      if (selectedImages.length != 4) {
+      if (selectedImages.length != limitImages) {
         Swal.fire({
           title: "Error!",
-          text: "Debe seleccionar 4 imágenes.",
+          text: `Debe seleccionar ${limitImages} imagen.`,
           icon: "error",
           confirmButtonText: "Ok",
         });
+        setSelectedImages([])
         return;
       }
 
       const formData = new FormData();
       // id = "test ..."
       console.log({ type: typeof EventChange });
-      for (let i = 0; i <= 4; i++) {
+      for (let i = 0; i <= limitImages; i++) {
         let image = selectedImages[i];
         formData.append(`imagen${i + 1}`, image);
+        // formData.append('id_publicacion', idPublicacion)
       }
       // selectedImages.forEach((image, index) => {
       //   formData.append(`image-${index + 1}`, image);
       // });
+      EventChange(formData);
 
-      axios
-        .post(
-          "http://localhost:8080/api/publicacion/imagen?imagen1=&imagen2&imagen3&imagen4d",
-          formData
-        )
-        .then((response) => {
-          // Procesar la respuesta de la API en caso de éxito
-          console.log(response);
-          id = response.data;
-          EventChange(response.data);
-        })
-        .catch((error) => {
-          // Manejar errores de la solicitud a la API
-          console.error(error);
-        });
+      // axios
+      //   .post(
+      //     // "http://localhost:8080/api/publicacion/imagen?imagen1=&imagen2&imagen3&imagen4d",
+      //     "http://localhost:8080/api/publicacion/imagen",
+      //     formData
+      //   )
+      //   .then((response) => {
+      //     // Procesar la respuesta de la API en caso de éxito
+      //     console.log(response);
+      //     EventChange(formData);
+      //   })
+      //   .catch((error) => {
+      //     // Manejar errores de la solicitud a la API
+      //     console.error(error);
+      //   });
     } catch (error) {}
   };
 
@@ -73,7 +77,7 @@ const ImageUploader = ({ id, EventChange }) => {
         accept="image/*"
         onChange={handleImageUpload}
       />
-      <button onClick={handleUpload}>Subir</button>
+      <button onClick={handleUpload}>Confirmar selección</button>
       <div>
         {selectedImages.map((image, index) => (
           <img

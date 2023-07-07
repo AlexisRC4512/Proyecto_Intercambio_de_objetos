@@ -26,6 +26,10 @@ const router = createBrowserRouter([
     // element: <VerificationPage />,
   },
   {
+    path: "/createPost",
+    element: <FormPost />
+  },
+  {
     path: "/updatePost",
     element: <FormPost />
   },

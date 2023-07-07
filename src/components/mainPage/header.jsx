@@ -1,8 +1,15 @@
 import React from "react";
 import "./styles.css";
 import posterImage from "../../assets/Plantillas/mainPage/images/poster.png";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const routeToCreatePost = () => {
+    navigate("/createPost");
+  }
+
   return (
     <div className="v117_341">
       {/* <div className="v117_342"></div> */}
@@ -11,7 +18,7 @@ const Header = () => {
           <span className="v117_356">
             Hola,  ¿Intercambiamos algo?
           </span>
-          <div className="xd_v117_357">
+          <div className="xd_v117_357" onClick={() => routeToCreatePost()}>
             <div className="v117_358">
               <span className="xd_v117_359">Publicar</span>
             </div>
