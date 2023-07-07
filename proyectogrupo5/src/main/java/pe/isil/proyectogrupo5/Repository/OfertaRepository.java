@@ -20,4 +20,7 @@ public interface OfertaRepository extends JpaRepository<Oferta, Integer> {
     @Query("SELECT o.idOferta AS idOferta, o.publicacion2 AS publicacion2, o.fecha AS fecha, o.estado AS estado FROM Oferta o WHERE o.publicacion2.codigoUsuario = :codigoUsuario")
     List<OfertaPublicacion2> findByPublicacion2_CodigoUsuario2(@Param("codigoUsuario") int codigoUsuario);
 
+    @Query("SELECT o FROM Oferta o WHERE o.publicacion1.codigoUsuario = :codigoUsuario OR o.publicacion2.codigoUsuario = :codigoUsuario")
+    List<Oferta> findByPublicacionIdUsuario(@Param("codigoUsuario") int codigoUsuario);
+
 }

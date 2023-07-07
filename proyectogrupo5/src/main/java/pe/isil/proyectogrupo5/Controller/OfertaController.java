@@ -71,4 +71,10 @@ public class OfertaController {
         List<OfertaPublicacion2> ofertas = ofertaService.findByPublicacionIdUsuario2(codigoUsuario);
         return ResponseEntity.ok(ofertas);
     }
+    @GetMapping("/ofertas/codigoUsuario/{codigoUsuario}")
+    public ResponseEntity<List<Oferta>> getOfertasByPublicacionCodigo(@PathVariable int codigoUsuario) {
+        List<Oferta> ofertas = ofertaService.findByPublicacionIdUsuario(codigoUsuario);
+        return ResponseEntity.ok(ofertas);
+    }
+
 }

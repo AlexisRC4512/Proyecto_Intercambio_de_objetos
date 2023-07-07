@@ -65,4 +65,7 @@ public class OfertaService {
     public List<OfertaPublicacion2> findByPublicacionIdUsuario2(int codigoUsuario) {
         return ofertaRepository.findByPublicacion2_CodigoUsuario2(codigoUsuario);
     }
+    public List<Oferta> findByPublicacionIdUsuario(int codigoUsuario) {
+        return ofertaRepository.findByPublicacionIdUsuario(codigoUsuario);
+    }
 }
