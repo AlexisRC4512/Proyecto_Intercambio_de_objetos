@@ -2551,6 +2551,17 @@ body {
   border-radius: 10px;
 }
 
+.miniImgProductItem {
+  /* width: 400px; */
+  width: 120px;
+  border-radius: 10px;
+}
+
+.miniImgProduct {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .not_products {
   display: block;
   margin: 50px auto;
@@ -2641,6 +2652,7 @@ body {
 .btnBlueactive {
   background: #254280f5 !important;
   opacity: 1;
+  cursor: pointer;
 }
 
 .xd_v117_357 {
