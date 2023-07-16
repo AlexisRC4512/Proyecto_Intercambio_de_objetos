@@ -25,7 +25,7 @@ public class OfertaController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Oferta> obtenerOfertaPorId(@PathVariable("id_oferta") int idOferta) {
+    public ResponseEntity<Oferta> obtenerOfertaPorId(@PathVariable("id") int idOferta) {
         Oferta oferta = ofertaService.obtenerOfertaPorId(idOferta);
         return new ResponseEntity<>(oferta, HttpStatus.OK);
     }
