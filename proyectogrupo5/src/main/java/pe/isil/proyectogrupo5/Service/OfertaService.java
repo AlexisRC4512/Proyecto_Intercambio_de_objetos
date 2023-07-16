@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.isil.proyectogrupo5.Interfaces.OfertaPublicacion1;
 import pe.isil.proyectogrupo5.Interfaces.OfertaPublicacion2;
+
 import pe.isil.proyectogrupo5.Model.Oferta;
 import pe.isil.proyectogrupo5.Model.Publicacion;
 import pe.isil.proyectogrupo5.Repository.OfertaRepository;
@@ -67,5 +68,9 @@ public class OfertaService {
     }
     public List<Oferta> findByPublicacionIdUsuario(int codigoUsuario) {
         return ofertaRepository.findByPublicacionIdUsuario(codigoUsuario);
+    }
+
+    public Oferta findByOfertaporId(int idOferta){
+        return ofertaRepository.findByidOferta(idOferta);
     }
 }

@@ -10,7 +10,6 @@ import pe.isil.proyectogrupo5.Model.Oferta;
 import pe.isil.proyectogrupo5.Service.OfertaService;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -48,6 +47,12 @@ public class OfertaController {
         oferta.setIdOferta(idOferta);
         Oferta ofertaActualizada = ofertaService.editarOferta(oferta);
         return new ResponseEntity<>(ofertaActualizada, HttpStatus.OK);
+    }
+    @PutMapping("editarOfertaEstado/{id}")
+    public Oferta editarOfertaEstado(@PathVariable("id") int idOferta, @RequestParam int estado) {
+       Oferta ofertaActualizada = ofertaService.findByOfertaporId(idOferta);
+        ofertaActualizada.setEstado(estado);
+        return ofertaActualizada;
     }
 
     @DeleteMapping("/{id}")
