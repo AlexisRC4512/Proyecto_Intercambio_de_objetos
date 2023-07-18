@@ -16,9 +16,10 @@ function LoginPage() {
 
   useEffect(() => {
     const intentLocalStorage = JSON.parse(localStorage.getItem('intents'));
+    console.log({intentLocalStorage__: intentLocalStorage});
     setIntents({
-      counter: intentLocalStorage.counter,
-      time: new Date(intentLocalStorage.time)
+      counter: intentLocalStorage ? intentLocalStorage.counter : 0,
+      time: new Date(intentLocalStorage ? intentLocalStorage.time : '')
     })
   }, []);
 

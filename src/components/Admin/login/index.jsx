@@ -15,7 +15,12 @@ function AdminLoginPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("init ,,,,");
+    const intentLocalStorage = JSON.parse(localStorage.getItem('intents'));
+    console.log({intentLocalStorage__: intentLocalStorage});
+    setIntents({
+      counter: intentLocalStorage ? intentLocalStorage.counter : 0,
+      time: new Date(intentLocalStorage ? intentLocalStorage.time : '')
+    })
   });
 
   const login = async (e) => {
