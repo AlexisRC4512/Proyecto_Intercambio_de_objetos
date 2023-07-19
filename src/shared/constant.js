@@ -11,3 +11,10 @@ export const productCondition = {
     '2': 'Usado',
     '3': 'Por reparar'
 }
+
+export const postState = {
+    '0':'cancelar',
+    '1':'Pendiente',
+    '2':'Aceptado',
+    '3':'Rechazado'
+}

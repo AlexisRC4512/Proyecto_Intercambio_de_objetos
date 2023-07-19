@@ -833,7 +833,7 @@ body {
 
 .v117_398 {
   width: 389px;
-  height: 550px;
+  height: 625px;
   background: rgba(255, 255, 255, 0.10000000149011612);
   opacity: 1;
   /* posit  ive; */
@@ -2654,6 +2654,13 @@ body {
   opacity: 1;
   cursor: pointer;
 }
+
+.btnOrangeactive {
+  background: #c0b630f5 !important;
+  opacity: 1;
+  cursor: pointer;
+}
+
 
 .xd_v117_357 {
   cursor: pointer;

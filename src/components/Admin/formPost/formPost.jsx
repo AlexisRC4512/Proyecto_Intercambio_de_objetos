@@ -253,18 +253,18 @@ const FormPost = () => {
           dataPost_to_post: dataPost,
           formDataToUpload,
         });
-        // const resp = await axios.post(
-        //   `http://localhost:8080/api/publicacion/publicacion`,
-        //   dataPost
-        // );
-        // console.log({ res_submit_product: resp.data });
-        // setDataPost(postDataDefaultValue);
+        const resp = await axios.post(
+          `http://localhost:8080/api/publicacion/publicacion`,
+          dataPost
+        );
+        console.log({ res_submit_product: resp.data });
+        setDataPost(postDataDefaultValue);
 
-        // const formData = formDataToUpload;
-        // formData.append("id_publicacion", resp.data.id_publicacion);
-        // await axios.post("http://localhost:8080/api/publicacion/imagen", formData);
+        const formData = formDataToUpload;
+        formData.append("id_publicacion", resp.data.id_publicacion);
+        await axios.post("http://localhost:8080/api/publicacion/imagen", formData);
 
-        // navigate("/mainPage");
+        navigate("/mainPage");
       }
     } catch (error) {
       console.log("Error call post-product-service:\n", error);

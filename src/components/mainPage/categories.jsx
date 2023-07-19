@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { productCondition, productStates } from "../../shared/constant";
+import { postState, productCondition, productStates } from "../../shared/constant";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -10,16 +10,25 @@ const Categories = () => {
   const [categoriesList, setCategoriesList] = useState([]);
   const [categorySelected, setCategorySelected] = useState(1);
   const [userId, setuserId] = useState(0);
-  const [reviewAllPosts, setReviewMyPosts] = useState(false);
+  const [reviewAllPosts, setReviewMyPosts] = useState(true);
   const [productList, setProductList] = useState([]);
   const [productSelected, setProductSelected] = useState([]);
   const [myProductsInOffer, setMyProductsInOffer] = useState([]);
+  const [listaIntercambioPorMiProduct, setListaIntercambioPorMiProduct] =
+    useState([]);
 
   const navigate = useNavigate();
 
   const [modalProps, setmodalProps] = useState({
     show: false,
     title: "Elige cuál de tus productos quieres ofertar",
+    idProductToWant: null,
+  });
+
+  const [modalOfertasProps, setModalOfertasProps] = useState({
+    show: false,
+    title:
+      "Esta es la lista de products que se ofrecen a cambio de tu producto:",
     idProductToWant: null,
   });
 
@@ -56,6 +65,10 @@ const Categories = () => {
         icon: "success",
         confirmButtonText: "Ok",
       });
+      setmodalProps({
+        ...modalProps,
+        show: false,
+      })
 
       await getMyProductOnOffer(userId);
     }
@@ -69,6 +82,46 @@ const Categories = () => {
       show: true,
       idProductToWant: product,
     });
+  };
+
+  const getOfferForMyProduct = async (offerIds = []) => {
+    console.log({reviewAllPosts});
+    if (!reviewAllPosts) {
+      console.log({ offerIds });
+      const listaIntercambioPorMiProduct_aux = [];
+      const prefixImage = "../../assets/Ruta_imagen/";
+
+      for (let j = 0; j < offerIds.length; j++) {
+        const offerId = offerIds[j];
+
+        console.log({ offerId });
+        const uriGetProductsByOfferAndProduct = `http://localhost:8080/api/ofertas/${offerId.idOferta}`;
+        const requestProductsByOfferAndProduct = await axios.get(
+          uriGetProductsByOfferAndProduct
+        );
+
+        const responseProductsByOffer = requestProductsByOfferAndProduct.data;
+        const idImageProductByOffer =
+          responseProductsByOffer.publicacion2.id_publicacion;
+        const requestImageByProduct = await axios.get(
+          `http://localhost:8080/api/publicacion/imagenIdpublicacion/${idImageProductByOffer}`
+        );
+
+        listaIntercambioPorMiProduct_aux.push({
+          imagen: prefixImage + requestImageByProduct.data[0],
+          oferta: responseProductsByOffer,
+        });
+      }
+
+      console.log(".... getOfferForMyProduct", {
+        listaIntercambioPorMiProduct_aux,
+      });
+      setListaIntercambioPorMiProduct(listaIntercambioPorMiProduct_aux);
+      setModalOfertasProps({
+        ...modalOfertasProps,
+        show: true,
+      });
+    }
   };
 
   const updateProduct = (product) => {
@@ -108,19 +161,42 @@ const Categories = () => {
   };
 
   const toggleShowMyPosts = async () => {
-    if (!reviewAllPosts) {
-      setProductSelected(productList.filter((p) => p.codigoUsuario === userId));
-      const uriGetMyProductsWithInteres = ` http://localhost:8080/api/ofertas/ofertas/usuario1/${userId}`;
-      const requestMyProductWithInteres = await axios.get(uriGetMyProductsWithInteres);
-      const responseMyProductsWithInteres = requestMyProductWithInteres.data;
-      const dataMyProducts = productList.filter((p) => p.codigoUsuario === userId);
+    if (reviewAllPosts) {
+      const myProducts = productList.filter((p) => p.codigoUsuario === userId);
+      const ofertasByUser = await getOfertaUsuario1ByUser(userId);
+      const listaMisProductsConOferta = [
+        ...new Set(
+          ofertasByUser.map((oferta) => oferta.publicacion1.id_publicacion)
+        ),
+      ];
+      const listaOffertas = ofertasByUser.map((oferta) => {
+        return {
+          idOferta: oferta.idOferta,
+          publicacion: oferta.publicacion1.id_publicacion,
+        };
+      });
+      console.log({ listaOffertas });
+
+      const newProductsSelected = myProducts.map((mp) => {
+        if (listaMisProductsConOferta.includes(mp.id_publicacion)) {
+          return {
+            ...mp,
+            withOffer: true,
+            idOfertas: listaOffertas.filter(
+              (oferta) => oferta.publicacion == mp.id_publicacion
+            ),
+          };
+        } else {
+          return mp;
+        }
+      }); // filtar con listaMisProductsConOferta.include
+      setProductSelected(newProductsSelected);
 
       console.log({
-        responseMyProductsWithInteres,
-        dataMyProducts
+        myProducts,
+        listaMisProductsConOferta,
+        newProductsSelected,
       });
-
-
     } else {
       setProductSelected(
         productList.filter((p) => {
@@ -143,6 +219,35 @@ const Categories = () => {
     return resp.data;
   };
 
+  const getOfertaUsuario1ByUser = async (userId) => {
+    const uriOfertasUsuario1ByUser = `http://localhost:8080/api/ofertas/ofertas/usuario1/${userId}`;
+
+    const requestOfertaByUser = await axios.get(uriOfertasUsuario1ByUser);
+    const responseOfertaByUser = requestOfertaByUser.data;
+    console.log({ responseOfertaByUser });
+    return responseOfertaByUser;
+  };
+
+  const updateOfferState = async (idOferta, isAccept) => {
+    const ACEPTADO = 2
+    const RECHAZADO = 3
+    const offerToUpdateState = isAccept ? ACEPTADO : RECHAZADO;
+    const uriUpdateOfferState = `http://localhost:8080/api/ofertas/editarOfertaEstado/${idOferta}?estado=${offerToUpdateState}`;
+    
+    const requestUpdateOfferState = await axios.put(uriUpdateOfferState)
+    const responseUpodateOfferState = requestUpdateOfferState.data;
+
+    if (responseUpodateOfferState) {
+      Swal.fire({
+        title: "Genial!!",
+        text: "Tu oferta se ha completado",
+        icon: "success",
+        confirmButtonText: "Ok",
+      });
+    }
+
+  }
+
   useEffect(() => {
     async function fetchData() {
       let resp = await axios.get(
@@ -164,11 +269,6 @@ const Categories = () => {
       }
       console.log({ productListFormated });
       setProductList(productListFormated);
-      // setProductSelected(
-      //   productListFormated.filter(
-      //     (p) => p.id_categoria === resp.data[0].id_categoria
-      //   )
-      // );
       setProductSelected(
         productListFormated.filter((p) => {
           if (p.id_categoria === resp.data[0].id_categoria) {
@@ -267,6 +367,85 @@ const Categories = () => {
           </table>
         </div>
       </SweetAlert2>
+      {!reviewAllPosts && (
+        <SweetAlert2
+          width={800}
+          showConfirmButton={false}
+          {...modalOfertasProps}
+          didClose={() =>
+            setModalOfertasProps({
+              ...modalOfertasProps,
+              show: false,
+            })
+          }
+          showDenyButton={true}
+          denyButtonText="Cancelar"
+          willClose={() =>
+            setModalOfertasProps({
+              ...modalOfertasProps,
+              show: false,
+            })
+          }
+        >
+          <div className="table-responsive">
+            <table className="table table-primary">
+              <tbody>
+                {listaIntercambioPorMiProduct.map((product) => {
+                  if (
+                    !myProductsInOffer
+                      .map((e) => e.publicacion2.id_publicacion)
+                      .includes(product.id_publicacion)
+                  ) {
+                    return (
+                      <tr className="">
+                        <td className="miniImgProduct" scope="row">
+                          <div className="item-container">
+                            <img
+                              key={product.oferta.publicacion2.id_publicacion}
+                              src={product.imagen}
+                              className="miniImgProductItem"
+                              alt="product"
+                            />
+                            <span>{product.oferta.publicacion2.titulo}</span>
+                          </div>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            className="btn btn-primary"
+                            onClick={() => updateOfferState(product.oferta.idOferta, true) }
+                          >
+                            Aceptar
+                          </button>
+                          <button
+                            type="button"
+                            className="btn btn-secondary"
+                            onClick={() => updateOfferState(product.oferta.idOferta, false) }
+                          >
+                            Rechazar
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  }
+                })}
+
+                {productList
+                  .filter((p) => p.codigoUsuario === userId)
+                  .map((myProduct) => {
+                    myProductsInOffer.map((myProductInOffer) => {
+                      if (
+                        myProductInOffer.publicacion2.id_publicacion !==
+                        myProduct.id_publicacion
+                      ) {
+                      }
+                    });
+                  })}
+              </tbody>
+            </table>
+          </div>
+        </SweetAlert2>
+      )}
       <div className="xd_v117_371">
         <span className="v117_372">Categorías</span>
         <br />
@@ -278,7 +457,7 @@ const Categories = () => {
             className="toOfferItem btnBlueactive"
             onClick={() => toggleShowMyPosts()}
           >
-            {reviewAllPosts
+            {!reviewAllPosts
               ? "Ver todas las publicaciones"
               : "Ver mis publicaciones"}
           </button>
@@ -335,7 +514,7 @@ const Categories = () => {
                 <span className="productname">{item.productName}</span>
               </div>
             </div>
-            {reviewAllPosts && (
+            {!reviewAllPosts && (
               <div
                 className="toOfferItem btnBlueactive"
                 onClick={() => updateProduct(item)}
@@ -343,12 +522,21 @@ const Categories = () => {
                 Editar
               </div>
             )}
-            {!reviewAllPosts && (
+            {reviewAllPosts && (
               <div
                 className="toOfferItem btnBlueactive"
                 onClick={() => ofertarProduct(item)}
               >
                 Ofertar
+              </div>
+            )}
+            <br />
+            { item.withOffer && (
+              <div
+                className="toOfferItem btnOrangeactive"
+                onClick={() => getOfferForMyProduct(item.idOfertas)}
+              >
+                Tiene Ofertas
               </div>
             )}
           </div>
