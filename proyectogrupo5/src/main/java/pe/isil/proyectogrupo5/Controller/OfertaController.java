@@ -51,7 +51,11 @@ public class OfertaController {
     @PutMapping("editarOfertaEstado/{id}")
     public Oferta editarOfertaEstado(@PathVariable("id") int idOferta, @RequestParam int estado) {
        Oferta ofertaActualizada = ofertaService.findByOfertaporId(idOferta);
-        ofertaActualizada.setEstado(estado);
+       if(ofertaActualizada!=null){
+           ofertaActualizada.setEstado(estado);
+           ofertaService.editarOferta(ofertaActualizada);
+       }
+
         return ofertaActualizada;
     }
 
