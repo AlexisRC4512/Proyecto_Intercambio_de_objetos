@@ -664,13 +664,22 @@ body {
   color: rgba(255, 255, 255, 1);
   font-family: Poppins;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 40px;
+  padding: 5px;
 }
 
 .category_item_inactive {
   color: rgba(255, 255, 255, 1);
   font-family: Poppins;
   font-weight: Medium;
+  font-size: 20px;
+
+  :hover {
+    font-size: 30;
+    background-color: rgb(73, 128, 223);
+    border-radius: 10px;
+    padding: 5px;
+  }
 }
 
 .v117_387 {
@@ -2652,7 +2661,7 @@ body {
 .btnBlueactive {
   background: #254280f5 !important;
   opacity: 1;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .btnOrangeactive {
@@ -2663,5 +2672,20 @@ body {
 
 
 .xd_v117_357 {
+  /* cursor: pointer; */
+}
+
+.switchBtnActive {
+  opacity: 0.9;
+}
+
+.switchBtnInactive {
+  opacity: 1;
   cursor: pointer;
+}
+
+.toggleShowMyPostsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import ImageUploader from "./uploadFiles";
 
 import "./styles.css";
 
 const FormPost = () => {
   const navigate = useNavigate();
+  const paramsRoute = useLocation()
 
   const [init, setInit] = useState(null);
   const [categorieSelected, setCategorieSelected] = useState(false);
@@ -273,9 +274,14 @@ const FormPost = () => {
   };
 
   useEffect(() => {
+    console.log({paramsRoute});
+    const pathRoute = paramsRoute.pathname;
+
+    const isUpdateProduct = pathRoute !== "/createPost"
+
     const dataFromLS = JSON.parse(localStorage.getItem("productToUpdate"));
     // setDataPost
-    if (dataFromLS) {
+    if (dataFromLS && isUpdateProduct) {
       const dataLS = dataFromLS.product;
       setToUpdate(true);
       setDataPost({
